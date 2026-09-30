@@ -95,7 +95,7 @@ export default function TeamSection() {
   return (
     <section
       id="teachers"
-      className="w-full scroll-mt-24 overflow-hidden bg-surface-muted py-12 md:py-16 lg:py-20"
+      className="w-full scroll-mt-24 overflow-hidden bg-surface-muted py-4 lg:py-12"
     >
       <div className="container mx-auto min-w-0 overflow-hidden px-5 md:px-6">
         <div className="mb-5 flex flex-col gap-5 md:mb-8 md:flex-row md:items-end md:justify-between">
