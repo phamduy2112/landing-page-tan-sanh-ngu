@@ -15,7 +15,7 @@ export default function VideoSection() {
           title="Khám phá lớp học tại"
           highlight="Tân Sanh Ngữ"
           desc="Cùng nhìn lại những khoảnh khắc học tập, hoạt động tương tác và trải nghiệm ngoại ngữ của học viên tại Tân Sanh Ngữ."
-            className="mb-0 max-w-[760px] mx-auto px-0 text-left md:text-center [&>p]:mx-auto md:[&>p]:mx-0"
+            className="mb-0 max-w-[760px] mx-auto px-0 text-center [&>p]:mx-auto md:[&>p]:mx-0"
         />
 
         <div className="mx-auto max-w-[1100px] overflow-hidden rounded-[24px] border border-[#37076D]/10 bg-[#37076D] shadow-[0_18px_50px_rgba(55,7,109,0.14)]">

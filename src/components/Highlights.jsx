@@ -36,7 +36,7 @@ export default function Highlights() {
             title="Một lựa chọn phù hợp"
             highlight="bắt đầu từ việc lắng nghe"
             desc="Tân Sanh Ngữ định hướng chương trình theo từng nhóm người học, mục tiêu và hình thức học phù hợp."
-            className="mb-7 px-0 text-left [&>p]:mx-0"
+            className="mb-7 px-0 text-center lg:text-left [&>p]:mx-0"
           />
 
           <div className="grid gap-4">

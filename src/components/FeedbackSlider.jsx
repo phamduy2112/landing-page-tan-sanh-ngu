@@ -54,10 +54,10 @@ export default function FeedbackSlider() {
             title="Khoảnh khắc học tập tại"
             highlight="Tân Sanh Ngữ"
             desc="Cùng xem những hình ảnh hoạt động và trải nghiệm học tập của học viên tại trung tâm."
-            className="mb-0 max-w-[720px] px-0 text-left [&>p]:mx-0"
+            className="mb-0 max-w-[720px]  px-0 text-center sm:text-left [&>p]:mx-0"
           />
 
-          <div className="mt-5 flex shrink-0 gap-3 md:mt-0">
+          <div className="mt-5 flex shrink-0 gap-3 md:mt-0 hidden md:block">
             <button
               type="button"
               aria-label="Ảnh trước"

@@ -48,7 +48,7 @@ export default function FAQ() {
           title="Giải đáp những băn khoăn"
           highlight="trước khi bắt đầu"
           desc="Một số câu hỏi thường gặp về chương trình và hình thức học tại Tân Sanh Ngữ."
-          className="mb-8 max-w-[760px] px-0 text-left md:mx-auto md:text-center [&>p]:mx-0 md:[&>p]:mx-auto"
+          className="mb-4 lg:mb-8 max-w-[760px] px-0 text-center md:mx-auto md:text-center [&>p]:mx-0 md:[&>p]:mx-auto"
         />
 
         <div className="space-y-3">

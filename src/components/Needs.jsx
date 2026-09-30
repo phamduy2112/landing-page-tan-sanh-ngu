@@ -20,7 +20,7 @@ const courses = [
     number: "02",
     type: "HỌC ONLINE",
     title: "Ngoại ngữ cho người lớn",
-    desc: "Các khóa học linh hoạt dành cho học sinh THPT, sinh viên và người đi làm đang cần cải thiện năng lực ngoại ngữ theo mục tiêu cá nhân.",
+    desc: "Các khóa học linh hoạt dành cho học sinh THPT, sinh viên và người đi làm đang cần cải thiện năng lực ngoại ngữ theo mục tiêu.",
     image: "/course-online.jpg",
     imageAlt: "Học viên tham gia khóa học ngoại ngữ online",
     list: ["IELTS & TOEIC", "Tiếng Anh giao tiếp", "Tiếng Nhật"],

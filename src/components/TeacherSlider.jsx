@@ -98,16 +98,16 @@ export default function TeamSection() {
       className="w-full scroll-mt-24 overflow-hidden bg-surface-muted py-4 lg:py-12"
     >
       <div className="container mx-auto min-w-0 overflow-hidden px-5 md:px-6">
-        <div className="mb-5 flex flex-col gap-5 md:mb-8 md:flex-row md:items-end md:justify-between">
+        <div className="mb-2 flex flex-col gap-5 md:mb-8 md:flex-row md:items-end md:justify-between">
           <SectionHeading
             eyebrow="ĐỘI NGŨ GIÁO VIÊN"
             title="Đồng hành cùng học viên là"
             highlight="đội ngũ giáo viên tận tâm"
             desc="Giáo viên tại Tân Sanh Ngữ đồng hành cùng người học trong quá trình xây dựng nền tảng, luyện tập và phát triển năng lực ngoại ngữ."
-            className="mb-0 max-w-[760px] mx-auto px-0 text-left md:text-center [&>p]:mx-auto md:[&>p]:mx-0"
+            className="mb-0 max-w-[760px] mx-auto px-0 text-center [&>p]:mx-auto md:[&>p]:mx-0"
           />
 
-          <div className="flex shrink-0 justify-center gap-3">
+          <div className=" shrink-0 justify-center gap-3 hidden md:flex">
             <button
               type="button"
               aria-label="Giáo viên trước"
