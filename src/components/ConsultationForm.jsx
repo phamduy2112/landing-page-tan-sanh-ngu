@@ -54,7 +54,7 @@ export default function ConsultationForm() {
               <label className="flex items-start gap-2 text-[10px] leading-relaxed text-text-muted"><input className="mt-0.5 accent-accent" type="checkbox" name="consent" checked={values.consent} onChange={updateField} aria-invalid={Boolean(errors.consent)} aria-describedby={errors.consent ? 'error-consent' : 'privacy-note'} /><span>Đồng ý để Tân Sanh Ngữ liên hệ tư vấn theo thông tin đã cung cấp. <span className="block" id="privacy-note">Thông tin về quyền riêng tư và cách sử dụng dữ liệu cần được trung tâm duyệt.</span></span></label>
               {errors.consent && <p className="mt-1 text-[10px] text-accent" id="error-consent">{errors.consent}</p>}
             </div>
-            <button className="inline-flex min-h-[52px] items-center justify-center gap-3 rounded bg-accent px-6 py-3.5 text-sm font-bold text-surface transition hover:-translate-y-0.5 hover:shadow-lg md:col-span-2" type="submit">Gửi yêu cầu tư vấn <span aria-hidden="true">↗</span></button>
+            <button className="inline-flex min-h-[52px] items-center justify-center gap-3 rounded bg-accent px-6 py-3.5 text-sm font-bold text-surface transition hover:-translate-y-0.5 hover:shadow-lg md:col-span-2" type="submit">Gửi yêu cầu tư vấn</button>
             <p className="text-[11px] font-bold text-primary md:col-span-2" role="status" aria-live="polite">{status}</p>
             <p className="-mt-2 text-center text-[9px] text-text-muted md:col-span-2">Mockup chưa kết nối hệ thống nhận lead.</p>
           </form>
