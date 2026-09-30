@@ -57,7 +57,7 @@ export default function FeedbackSlider() {
             className="mb-0 max-w-[720px]  px-0 text-center sm:text-left [&>p]:mx-0"
           />
 
-          <div className="mt-5 flex shrink-0 gap-3 md:mt-0 hidden md:block">
+          <div className="mt-5  shrink-0 gap-3 md:mt-0 hidden md:flex">
             <button
               type="button"
               aria-label="Ảnh trước"
