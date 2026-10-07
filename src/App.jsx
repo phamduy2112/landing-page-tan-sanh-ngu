@@ -21,14 +21,15 @@ export default function App() {
       <main id="main-content">
         <Hero />
         <WhySection />
+        <Highlights />
         <CoursesSection />
         {/* <Programs /> */}
-        <Highlights />
+
         <Roadmap />
         <TeacherSlider />
         <VideoSection />
         <FeedbackSlider />
-        <FAQ/>
+        <FAQ />
         <ConsultationForm />
       </main>
       <Footer />

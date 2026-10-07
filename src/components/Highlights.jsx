@@ -4,8 +4,8 @@ import SectionHeading from "./section-heading";
 export default function Highlights() {
   return (
     <section
-      id="strengths"
-      className="overflow-hidden bg-surface-muted py-4 lg:py-12"
+      id="about"
+      className="overflow-hidden bg-white py-4 lg:py-12"
     >
       <div className="container mx-auto grid w-[calc(100%-2rem)] max-w-[1200px] items-center gap-10 md:w-[calc(100%-5rem)] md:grid-cols-2 md:gap-16">
         {/* Hình bên trái */}
@@ -32,13 +32,12 @@ export default function Highlights() {
         {/* Content bên phải */}
         <div className="flex flex-col justify-center">
           <SectionHeading
-            eyebrow="ĐIỂM KHÁC BIỆT"
-            title="Một lựa chọn phù hợp"
-            highlight="bắt đầu từ việc lắng nghe"
-            desc="Tân Sanh Ngữ định hướng chương trình theo từng nhóm người học, mục tiêu và hình thức học phù hợp."
+            eyebrow="Triết Lý Giáo Dục"
+            title="Tân Sanh Ngữ"
+            highlight="nơi ngôn ngữ trở thành lợi thế"
+            desc="Chúng tôi không chỉ dạy ngoại ngữ, mà cùng bạn tháo gỡ rào cản giao tiếp và mở ra những cơ hội phát triển mới trong học tập và sự nghiệp."
             className="mb-7 px-0 text-center lg:text-left [&>p]:mx-0"
           />
-
           <div className="grid gap-4">
             {/* Card lớn */}
             <article className="rounded-[20px] bg-primary p-6 text-surface md:p-7">
@@ -90,7 +89,7 @@ export default function Highlights() {
             </div>
           </div>
 
-         <ButtonCTA text="Trao đổi nhu cầu học" />
+          <ButtonCTA text="Trao đổi nhu cầu học" />
         </div>
       </div>
     </section>
