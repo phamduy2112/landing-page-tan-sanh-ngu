@@ -40,15 +40,15 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq"       className="w-full overflow-hidden bg-white py-10 lg:py-16"
->
+    <section id="faq" className="w-full overflow-hidden bg-white py-10 lg:py-16"
+    >
       <div className="container mx-auto w-[calc(100%-2rem)] max-w-[1000px] md:w-[calc(100%-5rem)]">
         <SectionHeading
           eyebrow="CÂU HỎI THƯỜNG GẶP"
           title="Giải đáp những băn khoăn"
           highlight="trước khi bắt đầu"
           desc="Một số câu hỏi thường gặp về chương trình và hình thức học tại Tân Sanh Ngữ."
-          className="mb-4 lg:mb-8 max-w-[760px] px-0 text-center md:mx-auto md:text-center [&>p]:mx-0 md:[&>p]:mx-auto"
+          className="mb-4  max-w-[760px] px-0 text-center md:mx-auto md:text-center [&>p]:mx-0 md:[&>p]:mx-auto"
         />
 
         <div className="space-y-3">
@@ -58,11 +58,10 @@ export default function FAQ() {
             return (
               <article
                 key={item.question}
-                className={`overflow-hidden rounded-[18px] border transition duration-300 ${
-                  isOpen
+                className={`overflow-hidden rounded-[18px] border transition duration-300 ${isOpen
                     ? "border-primary/15 bg-surface shadow-[0_12px_30px_rgba(20,34,73,0.09)]"
                     : "border-primary/10 bg-surface hover:border-primary/20"
-                }`}
+                  }`}
               >
                 <button
                   type="button"
@@ -75,11 +74,10 @@ export default function FAQ() {
                   </span>
 
                   <span
-                    className={`grid h-9 w-9 shrink-0 place-items-center rounded-full text-xl transition duration-300 ${
-                      isOpen
+                    className={`grid h-9 w-9 shrink-0 place-items-center rounded-full text-xl transition duration-300 ${isOpen
                         ? "rotate-45 bg-accent text-surface"
                         : "bg-highlight text-primary"
-                    }`}
+                      }`}
                   >
                     +
                   </span>
@@ -98,7 +96,7 @@ export default function FAQ() {
           })}
         </div>
 
-       
+
       </div>
     </section>
   );
