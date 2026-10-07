@@ -11,7 +11,7 @@ export default function OpeningSchedule() {
           title="Lịch Khai Giảng Tại"
           highlight="Tân Sanh Ngữ"
           desc="Cập nhật lịch khai giảng các khóa học tiếng Anh. Nhanh tay đăng ký để giữ chỗ và nhận ngay các ưu đãi hấp dẫn trong tháng!"
-          className="mb-8 text-center"
+          className="mb-4 text-center"
         />
 
         {/* Khung chứa hình ảnh lịch khai giảng */}
