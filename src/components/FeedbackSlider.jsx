@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import SectionHeading from "./section-heading";
 import { GrFormPrevious } from "react-icons/gr";
 import { MdOutlineNavigateNext } from "react-icons/md";
@@ -28,22 +28,44 @@ const feedbackImages = [
 
 export default function FeedbackSlider() {
   const [index, setIndex] = useState(0);
+  const sliderRef = useRef(null);
+
+  const scrollToSlide = (idx) => {
+    setIndex(idx);
+    if (sliderRef.current) {
+      const child = sliderRef.current.children[idx];
+      if (child) {
+        const container = sliderRef.current;
+        const scrollLeft = child.offsetLeft - container.offsetLeft;
+        container.scrollTo({
+          left: scrollLeft,
+          behavior: "smooth",
+        });
+      }
+    }
+  };
 
   const previousSlide = () => {
-    setIndex(
-      (current) =>
-        (current - 1 + feedbackImages.length) % feedbackImages.length,
-    );
+    const newIdx = (index - 1 + feedbackImages.length) % feedbackImages.length;
+    scrollToSlide(newIdx);
   };
 
   const nextSlide = () => {
-    setIndex((current) => (current + 1) % feedbackImages.length);
+    const newIdx = (index + 1) % feedbackImages.length;
+    scrollToSlide(newIdx);
   };
 
-  const visibleImages = Array.from(
-    { length: Math.min(3, feedbackImages.length) },
-    (_, offset) => feedbackImages[(index + offset) % feedbackImages.length],
-  );
+  const handleScroll = () => {
+    if (sliderRef.current) {
+      const container = sliderRef.current;
+      const scrollLeft = container.scrollLeft;
+      const childWidth = container.children[0]?.offsetWidth || 1;
+      const newIndex = Math.round(scrollLeft / childWidth);
+      if (newIndex !== index && newIndex >= 0 && newIndex < feedbackImages.length) {
+        setIndex(newIndex);
+      }
+    }
+  };
 
   return (
     <section id="feedback" className="overflow-hidden bg-surface-muted py-4 lg:py-12">
@@ -64,8 +86,7 @@ export default function FeedbackSlider() {
               onClick={previousSlide}
               className="grid h-11 w-11 place-items-center rounded-full border border-primary/20 bg-surface text-xl text-primary transition hover:bg-primary hover:text-surface"
             >
-                            <GrFormPrevious className="text-[24px]" />
-              
+              <GrFormPrevious className="text-[24px]" />
             </button>
 
             <button
@@ -74,17 +95,20 @@ export default function FeedbackSlider() {
               onClick={nextSlide}
               className="grid h-11 w-11 place-items-center rounded-full bg-accent text-xl text-surface transition hover:bg-primary"
             >
-                         <MdOutlineNavigateNext className="text-[24px]" />
-           
+              <MdOutlineNavigateNext className="text-[24px]" />
             </button>
           </div>
         </div>
 
-        <div className="flex gap-4 overflow-hidden md:gap-6">
-          {visibleImages.map((item, position) => (
+        <div 
+          ref={sliderRef}
+          onScroll={handleScroll}
+          className="flex gap-4 overflow-x-auto snap-x snap-mandatory md:gap-6 pb-4 [&::-webkit-scrollbar]:hidden [scrollbar-width:none]"
+        >
+          {feedbackImages.map((item, position) => (
             <article
-              key={`${item.image}-${index}-${position}`}
-              className="group relative aspect-[4/5] w-[82%] shrink-0 overflow-hidden rounded-[22px] bg-surface shadow-[0_10px_28px_rgba(20,34,73,0.1)] md:w-[calc((100%-3rem)/3)]"
+              key={`${item.image}-${position}`}
+              className="group relative aspect-[4/5] w-full snap-center shrink-0 overflow-hidden rounded-[22px] bg-surface shadow-[0_10px_28px_rgba(20,34,73,0.1)] md:w-[calc((100%-3rem)/3)]"
             >
               <img
                 src={item.image}
@@ -107,7 +131,7 @@ export default function FeedbackSlider() {
               key={dotIndex}
               type="button"
               aria-label={`Xem ảnh ${dotIndex + 1}`}
-              onClick={() => setIndex(dotIndex)}
+              onClick={() => scrollToSlide(dotIndex)}
               className={`h-2 rounded-full transition-all ${
                 index === dotIndex
                   ? "w-7 bg-accent"
