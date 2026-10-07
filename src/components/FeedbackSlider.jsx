@@ -68,7 +68,7 @@ export default function FeedbackSlider() {
   };
 
   return (
-    <section id="feedback" className="overflow-hidden bg-surface-muted py-4 lg:py-12">
+    <section id="feedback" className="overflow-hidden bg-surface-muted py-10 lg:py-16">
       <div className="container mx-auto w-[calc(100%-2rem)] max-w-[1200px] md:w-[calc(100%-5rem)]">
         <div className="mb-8 flex items-end justify-between gap-5 max-md:block">
           <SectionHeading
@@ -100,7 +100,7 @@ export default function FeedbackSlider() {
           </div>
         </div>
 
-        <div 
+        <div
           ref={sliderRef}
           onScroll={handleScroll}
           className="flex gap-4 overflow-x-auto snap-x snap-mandatory md:gap-6 pb-4 [&::-webkit-scrollbar]:hidden [scrollbar-width:none]"
@@ -132,11 +132,10 @@ export default function FeedbackSlider() {
               type="button"
               aria-label={`Xem ảnh ${dotIndex + 1}`}
               onClick={() => scrollToSlide(dotIndex)}
-              className={`h-2 rounded-full transition-all ${
-                index === dotIndex
+              className={`h-2 rounded-full transition-all ${index === dotIndex
                   ? "w-7 bg-accent"
                   : "w-2 bg-primary/20 hover:bg-primary/40"
-              }`}
+                }`}
             />
           ))}
         </div>

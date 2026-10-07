@@ -240,7 +240,7 @@ export default function WhySection() {
   };
 
   return (
-    <section id="ly-do-chon" className="w-full overflow-hidden bg-surface-muted py-4 lg:py-12">
+    <section id="ly-do-chon" className="w-full overflow-hidden bg-surface-muted py-10 lg:py-16">
       <div className="mx-auto max-w-[1320px] md:px-8">
         <SectionHeading
           eyebrow="VÌ SAO CHỌN TÂN SANH NGỮ"

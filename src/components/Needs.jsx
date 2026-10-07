@@ -1,3 +1,4 @@
+﻿import { useState } from "react";
 import SectionHeading from "./section-heading";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
@@ -57,6 +58,16 @@ const courses = [
     type: "IELTS",
     title: "IELTS Intermediate",
     desc: "Aim 6.0 ~ 6.5",
+    cta: "Tư vấn khóa học",
+    href: "#dang-ky",
+    badgeClass: "bg-primary",
+    linkClass: "text-primary",
+  },
+  {
+    number: "07",
+    type: "VSTEP / TOEFL...",
+    title: "Các Chứng Chỉ Tiếng Anh Khác",
+    desc: "Chương trình đào tạo VSTEP, TOEFL và các chứng chỉ theo nhu cầu.",
     cta: "Tư vấn khóa học",
     href: "#dang-ky",
     badgeClass: "bg-primary",
@@ -125,19 +136,44 @@ function CourseCard({ item }) {
 }
 
 export default function CoursesSection() {
+  const categories = ["TOEIC", "IELTS", "GIAO TIẾP", "CHỨNG CHỈ KHÁC"];
+  const [activeCategory, setActiveCategory] = useState(categories[0]);
+
+  const filteredCourses = courses.filter((course) => {
+    if (activeCategory === "CHỨNG CHỈ KHÁC") {
+      return !["TOEIC", "IELTS", "GIAO TIẾP"].includes(course.type);
+    }
+    return course.type === activeCategory;
+  });
+
   return (
-    <section id="courses" className="overflow-hidden bg-surface-muted py-8 lg:py-16 px-4 md:px-0 md:px-0">
+    <section id="courses" className="overflow-hidden bg-surface-muted py-8 lg:py-16 px-4 md:px-0">
       <div className="mx-auto max-w-[1200px]">
         <SectionHeading
           eyebrow="CHƯƠNG TRÌNH ĐÀO TẠO"
           title="Các Khóa Học Tại"
           highlight="Tân Sanh Ngữ"
           desc="Các khóa học chất lượng đáp ứng các nhu cầu thiết yếu trong phát triển bản thân trên con đường học tập và làm việc. Mọi khóa học đều được miễn phí buổi học thử đầu tiên (1 khóa = 8 buổi)."
-          className="mb-4 text-center"
+          className="mb-2 text-center"
         />
 
+        <div className="mb-5 flex w-full overflow-x-auto snap-x snap-mandatory justify-start md:justify-center gap-3 md:gap-4 pb-2 md:pb-0 px-2 md:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setActiveCategory(category)}
+              className={`shrink-0 snap-center rounded-full px-5 py-2.5 md:px-8 md:py-3 text-[14px] md:text-[16px] font-bold transition-all duration-300 ${activeCategory === category
+                ? "bg-[#18395e] text-white shadow-lg md:scale-105"
+                : "bg-white text-[#18395e] border border-[#18395e]/20 hover:bg-[#18395e]/5 md:hover:scale-105"
+                }`}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {courses.map((item) => (
+          {filteredCourses.map((item) => (
             <CourseCard key={item.number} item={item} />
           ))}
         </div>

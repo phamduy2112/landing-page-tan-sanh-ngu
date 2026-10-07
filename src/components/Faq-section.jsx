@@ -40,7 +40,7 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq"       className="w-full overflow-hidden bg-white py-4 lg:py-12"
+    <section id="faq"       className="w-full overflow-hidden bg-white py-10 lg:py-16"
 >
       <div className="container mx-auto w-[calc(100%-2rem)] max-w-[1000px] md:w-[calc(100%-5rem)]">
         <SectionHeading

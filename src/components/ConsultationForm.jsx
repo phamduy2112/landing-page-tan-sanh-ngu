@@ -34,7 +34,7 @@ export default function ConsultationForm() {
   const labelClass = 'text-[11px] font-bold text-primary'
 
   return (
-    <section className=" py-4 lg:py-12 bg-surface-muted" id="tu-van" aria-labelledby="contact-title">
+    <section className=" py-10 lg:py-16 bg-surface-muted" id="tu-van" aria-labelledby="contact-title">
       <div className="container mx-auto grid w-[calc(100%-3rem)] max-w-[1200px] overflow-hidden rounded-[18px] bg-primary shadow-xl md:w-[calc(100%-5rem)] md:grid-cols-[.95fr_1.05fr]">
         <div className="relative overflow-hidden px-7 py-10 text-surface md:px-[54px] md:py-[62px] before:absolute before:-left-[165px] before:-top-[165px] before:h-[310px] before:w-[310px] before:rounded-full before:border before:border-surface/15">
           <p className="relative mb-4 text-[11px] font-extrabold tracking-[.11em] text-highlight">BẮT ĐẦU TỪ MỘT CUỘC TRÒ CHUYỆN</p><h2 className="relative mb-4 max-w-[450px] font-heading text-[33px] font-extrabold leading-tight text-surface md:text-[40px]" id="contact-title">Cùng tìm khóa học phù hợp.</h2><p className="relative mb-7 max-w-[440px] text-[13px] text-surface/80">Để lại thông tin và chương trình bạn quan tâm. Chi tiết liên hệ sẽ được trung tâm xác nhận.</p>

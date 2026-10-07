@@ -5,11 +5,11 @@ export default function Highlights() {
   return (
     <section
       id="about"
-      className="overflow-hidden bg-white py-4 lg:py-12"
+      className="overflow-hidden bg-white py-10 lg:py-16"
     >
       <div className="container mx-auto grid w-[calc(100%-2rem)] max-w-[1200px] items-center gap-10 md:w-[calc(100%-5rem)] md:grid-cols-2 md:gap-16">
-        {/* Hình bên trái */}
-        <div className="relative min-h-[380px] overflow-hidden rounded-[24px] bg-primary md:min-h-[600px]">
+        {/* Hình bên trái (hiển thị dưới cùng trên mobile) */}
+        <div className="relative min-h-[380px] overflow-hidden rounded-[24px] bg-primary md:min-h-[600px] order-2 md:order-1">
           <img
             src="/assets/dangcapnhan.png"
             alt="Hoạt động học ngoại ngữ tại Tân Sanh Ngữ"
@@ -29,10 +29,10 @@ export default function Highlights() {
           </div>
         </div>
 
-        {/* Content bên phải */}
-        <div className="flex flex-col justify-center">
+        {/* Content bên phải (hiển thị trên cùng trên mobile) */}
+        <div className="flex flex-col justify-center order-1 md:order-2">
           <SectionHeading
-            eyebrow="Triết Lý Giáo Dục"
+            eyebrow="Giới Thiệu Tân Sanh Ngữ"
             title="Tân Sanh Ngữ"
             highlight="nơi ngôn ngữ trở thành lợi thế"
             desc="Chúng tôi không chỉ dạy ngoại ngữ, mà cùng bạn tháo gỡ rào cản giao tiếp và mở ra những cơ hội phát triển mới trong học tập và sự nghiệp."

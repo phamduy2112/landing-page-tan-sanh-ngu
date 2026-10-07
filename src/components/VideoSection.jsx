@@ -7,7 +7,7 @@ export default function VideoSection() {
   return (
     <section
       id="video"
-      className="w-full overflow-hidden F] py-4 md:py-12"
+      className="w-full overflow-hidden F] py-10 md:py-16"
     >
       <div className="container mx-auto w-[calc(100%-2rem)] max-w-[1200px] md:w-[calc(100%-5rem)]">
         <SectionHeading

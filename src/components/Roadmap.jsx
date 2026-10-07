@@ -29,7 +29,7 @@ const steps = [
 
 export default function Roadmap() {
   return (
-    <section id="pathway" className="overflow-hidden bg-white py-4 md:py-12">
+    <section id="pathway" className="overflow-hidden bg-white py-10 md:py-16">
       <div className="container mx-auto grid w-[calc(100%-2rem)] max-w-[1200px] gap-10 md:w-[calc(100%-5rem)] md:grid-cols-2 md:items-stretch md:gap-16">
         {/* Nội dung - bên trái */}
         <div className="flex flex-col justify-center">

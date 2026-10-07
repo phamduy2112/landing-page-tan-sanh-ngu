@@ -13,6 +13,7 @@ import FloatingContact from './components/FloatingContact.jsx'
 import WhySection from './components/Why.jsx'
 import CoursesSection from './components/Needs.jsx'
 import FAQ from './components/Faq-section.jsx'
+import OpeningSchedule from './components/OpeningSchedule.jsx'
 
 export default function App() {
   return (
@@ -23,13 +24,15 @@ export default function App() {
         <WhySection />
         <Highlights />
         <CoursesSection />
+        <OpeningSchedule />
         {/* <Programs /> */}
 
-        <Roadmap />
+        {/* <Roadmap /> */}
         <TeacherSlider />
-        <VideoSection />
-        <FeedbackSlider />
+        {/* <VideoSection /> */}
+        {/* <FeedbackSlider /> */}
         <FAQ />
+
         <ConsultationForm />
       </main>
       <Footer />
