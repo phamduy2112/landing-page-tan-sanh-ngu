@@ -147,7 +147,7 @@ export default function CoursesSection() {
   });
 
   return (
-    <section id="courses" className="overflow-hidden bg-surface-muted py-8 lg:py-16 px-4 md:px-0">
+    <section id="courses" className="overflow-hidden bg-surface-muted py-10 lg:py-16 px-4 md:px-0">
       <div className="mx-auto max-w-[1200px]">
         <SectionHeading
           eyebrow="CHƯƠNG TRÌNH ĐÀO TẠO"
