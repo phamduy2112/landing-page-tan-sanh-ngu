@@ -149,7 +149,7 @@ export default function TeamSection() {
             1024: { slidesPerView: 3, spaceBetween: 22 },
             1280: { slidesPerView: 4, spaceBetween: 24 },
           }}
-          className="!w-full !overflow-hidden !pb-4 [&_.swiper-wrapper]:!items-stretch [&_.swiper-slide]:!h-auto [&_.swiper-pagination-bullet]:!h-[7px] [&_.swiper-pagination-bullet]:!w-[7px] [&_.swiper-pagination-bullet]:!bg-primary [&_.swiper-pagination-bullet]:!opacity-25 [&_.swiper-pagination-bullet-active]:!w-[22px] [&_.swiper-pagination-bullet-active]:!rounded-full [&_.swiper-pagination-bullet-active]:!bg-accent [&_.swiper-pagination-bullet-active]:!opacity-100"
+          className="!w-full !overflow-hidden !pb-9 [&_.swiper-wrapper]:!items-stretch [&_.swiper-slide]:!h-auto [&_.swiper-pagination-bullet]:!h-[7px] [&_.swiper-pagination-bullet]:!w-[7px] [&_.swiper-pagination-bullet]:!bg-primary [&_.swiper-pagination-bullet]:!opacity-25 [&_.swiper-pagination-bullet-active]:!w-[22px] [&_.swiper-pagination-bullet-active]:!rounded-full [&_.swiper-pagination-bullet-active]:!bg-accent [&_.swiper-pagination-bullet-active]:!opacity-100"
         >
           {teachers.map((teacher, index) => (
             <SwiperSlide
