@@ -61,7 +61,7 @@ function TeacherCard({ teacher }) {
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-primary/75 via-primary/5 to-transparent" />
 
         <div className="absolute bottom-4 left-4 right-4">
-          <span className="inline-flex max-w-full items-center gap-1.5 rounded-full bg-accent px-3 py-1.5 text-[10px] font-bold tracking-[0.06em] text-surface">
+          <span className="inline-flex max-w-full items-center gap-1.5 rounded-full bg-accent px-3 py-1.5 text-[10px] font-bold tracking-[0.06em] text-primary">
             <HiOutlineAcademicCap className="shrink-0 text-[14px]" />
             <span className="truncate">{teacher.role}</span>
           </span>
@@ -119,7 +119,7 @@ export default function TeamSection() {
             <button
               type="button"
               aria-label="Giáo viên tiếp theo"
-              className="teacher-next flex h-11 w-11 items-center justify-center rounded-full border border-accent/30 text-accent transition hover:border-accent hover:bg-accent hover:text-surface"
+              className="teacher-next flex h-11 w-11 items-center justify-center rounded-full border border-primary/20 text-primary transition hover:border-accent hover:bg-accent hover:text-primary"
             >
               <MdOutlineNavigateNext className="text-[24px]" />
             </button>

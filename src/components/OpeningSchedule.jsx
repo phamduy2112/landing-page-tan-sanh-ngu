@@ -66,7 +66,7 @@ const ScheduleTable = () => {
 
                 {/* Trình độ */}
                 <td className="py-6 px-6 border-r border-gray-100 align-top">
-                  <div className="text-[#cc252c] text-2xl font-black mb-1">
+                  <div className="text-primary text-2xl font-black mb-1">
                     {course.program}<span className="text-[10px] align-top">&reg;</span>
                   </div>
                   <div className="text-gray-800 font-bold text-lg">{course.level}</div>
@@ -80,8 +80,8 @@ const ScheduleTable = () => {
                 {/* Tình trạng */}
                 <td className="py-6 px-6 align-top">
                   <span className={`inline-block px-3 py-1.5 text-xs font-semibold rounded-full border ${course.isFull
-                    ? "text-[#cc252c] border-red-200 bg-red-50/50" // Màu đỏ nếu gần hết chỗ
-                    : "text-green-600 border-green-200 bg-green-50/50" // Màu xanh nếu đang tuyển
+                    ? "text-primary border-primary/20 bg-primary/5"
+                    : "text-emerald-700 border-emerald-200 bg-emerald-50/50"
                     }`}>
                     {course.status}
                   </span>
@@ -93,13 +93,11 @@ const ScheduleTable = () => {
                   <div className="text-gray-500 text-sm mt-1">{course.time}</div>
                 </td>
 
-
-
                 {/* Đăng ký */}
                 <td className="py-6 px-6 text-center align-middle">
                   <a
                     href={"#tu-van"}
-                    className="bg-[#cc252c] hover:bg-red-700 text-white font-bold py-2 px-5 rounded-md shadow-sm transition-colors text-sm whitespace-nowrap"
+                    className="bg-accent hover:bg-secondary-hover text-primary font-extrabold py-2 px-5 rounded-md shadow-sm transition hover:shadow-md text-sm whitespace-nowrap inline-block"
                   >
                     Đăng ký ngay
                   </a>

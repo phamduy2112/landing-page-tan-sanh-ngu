@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "HB75";
+  src: url("../public/assets/HB75.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 88px;
@@ -11,6 +21,30 @@ body {
   @apply m-0 bg-surface font-body text-primary antialiased;
   min-width: 320px;
   line-height: 1.65;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "HB75", sans-serif !important;
+}
+
+.montserrat-regular {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+button,
+a {
+  font-family: "Montserrat", sans-serif !important;
+}
+
+body {
+  font-family: "Inter", sans-serif !important;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
 button,
@@ -29,18 +63,25 @@ a {
   @apply bg-highlight text-primary;
 }
 
-:focus-visible {
+/* :focus-visible {
   outline: 2px solid theme('colors.accent');
   outline-offset: 3px;
-}
+} */
 
 .container {
   width: min(1200px, calc(100% - 3rem));
 }
 
 @keyframes rise-in {
-  from { opacity: 0; transform: translateY(14px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-rise-in {
@@ -48,10 +89,13 @@ a {
 }
 
 @media (max-width: 760px) {
-  html { scroll-padding-top: 72px; }
+  html {
+    scroll-padding-top: 72px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {

@@ -93,7 +93,7 @@ export default function FeedbackSlider() {
               type="button"
               aria-label="Ảnh tiếp theo"
               onClick={nextSlide}
-              className="grid h-11 w-11 place-items-center rounded-full bg-accent text-xl text-surface transition hover:bg-primary"
+              className="grid h-11 w-11 place-items-center rounded-full bg-accent text-xl text-primary transition hover:bg-primary hover:text-surface"
             >
               <MdOutlineNavigateNext className="text-[24px]" />
             </button>
@@ -133,8 +133,8 @@ export default function FeedbackSlider() {
               aria-label={`Xem ảnh ${dotIndex + 1}`}
               onClick={() => scrollToSlide(dotIndex)}
               className={`h-2 rounded-full transition-all ${index === dotIndex
-                  ? "w-7 bg-accent"
-                  : "w-2 bg-primary/20 hover:bg-primary/40"
+                ? "w-7 bg-accent"
+                : "w-2 bg-primary/20 hover:bg-primary/40"
                 }`}
             />
           ))}

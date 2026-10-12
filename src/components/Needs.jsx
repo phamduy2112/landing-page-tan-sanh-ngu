@@ -1,4 +1,4 @@
-﻿import { useState } from "react";
+import { useState } from "react";
 import SectionHeading from "./section-heading";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
@@ -10,7 +10,7 @@ const courses = [
     desc: "Nền tảng và chuyên sâu.",
     cta: "Tư vấn lộ trình",
     href: "#dang-ky",
-    badgeClass: "bg-primary",
+    badgeClass: "bg-primary text-surface",
     linkClass: "text-primary",
   },
   {
@@ -20,8 +20,8 @@ const courses = [
     desc: "Xây dựng nền tảng vững chắc.",
     cta: "Tư vấn khóa học",
     href: "#dang-ky",
-    badgeClass: "bg-accent",
-    linkClass: "text-accent",
+    badgeClass: "bg-secondary text-primary font-bold",
+    linkClass: "text-primary",
   },
   {
     number: "03",
@@ -30,8 +30,8 @@ const courses = [
     desc: "Reading & Listening (Aim 600+)",
     cta: "Tư vấn khóa học",
     href: "#dang-ky",
-    badgeClass: "bg-accent",
-    linkClass: "text-accent",
+    badgeClass: "bg-secondary text-primary font-bold",
+    linkClass: "text-primary",
   },
   {
     number: "04",
@@ -40,7 +40,7 @@ const courses = [
     desc: "Aim 4.5",
     cta: "Tư vấn khóa học",
     href: "#dang-ky",
-    badgeClass: "bg-primary",
+    badgeClass: "bg-primary text-surface",
     linkClass: "text-primary",
   },
   {
@@ -50,7 +50,7 @@ const courses = [
     desc: "Aim 5.0 ~ 5.5",
     cta: "Tư vấn khóa học",
     href: "#dang-ky",
-    badgeClass: "bg-primary",
+    badgeClass: "bg-primary text-surface",
     linkClass: "text-primary",
   },
   {
@@ -60,7 +60,7 @@ const courses = [
     desc: "Aim 6.0 ~ 6.5",
     cta: "Tư vấn khóa học",
     href: "#dang-ky",
-    badgeClass: "bg-primary",
+    badgeClass: "bg-primary text-surface",
     linkClass: "text-primary",
   },
   {
@@ -70,7 +70,7 @@ const courses = [
     desc: "Chương trình đào tạo VSTEP, TOEFL và các chứng chỉ theo nhu cầu.",
     cta: "Tư vấn khóa học",
     href: "#dang-ky",
-    badgeClass: "bg-primary",
+    badgeClass: "bg-primary text-surface",
     linkClass: "text-primary",
   },
 ];
@@ -91,7 +91,7 @@ function CourseCard({ item }) {
         </span> */}
 
         <span
-          className={`absolute bottom-4 left-4 md:bottom-5 md:left-5 rounded-full px-3 py-2 text-[10px] font-extrabold tracking-[0.1em] text-surface ${item.badgeClass}`}
+          className={`absolute bottom-4 left-4 md:bottom-5 md:left-5 rounded-full px-3 py-2 text-[10px] font-extrabold tracking-[0.1em] ${item.badgeClass}`}
         >
           {item.type}
         </span>
@@ -123,7 +123,7 @@ function CourseCard({ item }) {
 
         <a
           href={item.href}
-          className={`group/link mt-auto inline-flex w-fit items-center gap-2 text-[13px] font-extrabold text-[#f26922]`}
+          className={`group/link mt-auto inline-flex w-fit items-center gap-2 text-[13px] font-extrabold text-primary transition-colors hover:text-accent-dark`}
         >
           {item.cta}
           <span className="transition-transform duration-300 group-hover/link:translate-x-1">
@@ -163,8 +163,8 @@ export default function CoursesSection() {
               key={category}
               onClick={() => setActiveCategory(category)}
               className={`shrink-0 snap-center rounded-full px-5 py-2.5 md:px-8 md:py-3 text-[14px] md:text-[16px] font-bold transition-all duration-300 ${activeCategory === category
-                ? "bg-[#18395e] text-white shadow-lg md:scale-105"
-                : "bg-white text-[#18395e] border border-[#18395e]/20 hover:bg-[#18395e]/5 md:hover:scale-105"
+                ? "bg-primary text-surface shadow-lg md:scale-105"
+                : "bg-surface text-primary border border-primary/20 hover:bg-primary/5 md:hover:scale-105"
                 }`}
             >
               {category}

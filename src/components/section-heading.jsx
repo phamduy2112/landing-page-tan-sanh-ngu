@@ -8,14 +8,14 @@ export default function SectionHeading({
   return (
     <div className={`mb-4 px-5  md:px-0 ${className}`}>
       {eyebrow && (
-        <span className="mb-2 inline-block text-[11px] font-extrabold tracking-[0.14em] text-accent md:text-[12px]">
+        <span className="mb-2 inline-block text-[11px] font-extrabold tracking-[0.14em] text-accent-dark md:text-[12px]">
           {eyebrow}
         </span>
       )}
 
-      <h2 className=" text-[26px] font-bold leading-[1.25] tracking-[-0.6px] text-[#142249] sm:text-[30px] capitalize md:text-[34px] ">
+      <h2 className=" text-[26px] font-bold leading-[1.25] tracking-[-0.6px] text-primary sm:text-[30px] capitalize md:text-[34px] ">
         {title}{" "}
-        {highlight && <span className="text-accent">{highlight}</span>}
+        {highlight && <span className="">{highlight}</span>}
       </h2>
 
       {desc && (

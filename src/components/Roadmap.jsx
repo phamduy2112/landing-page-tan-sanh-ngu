@@ -66,7 +66,7 @@ export default function Roadmap() {
 
           <a
             href="#tu-van"
-            className="group mt-2 inline-flex w-fit items-center gap-3 rounded-xl bg-primary px-6 py-3.5 text-[13px] font-extrabold text-surface transition hover:bg-accent"
+            className="group mt-2 inline-flex w-fit items-center gap-3 rounded-xl bg-primary px-6 py-3.5 text-[13px] font-extrabold text-surface transition hover:bg-accent hover:text-primary"
           >
             Đăng ký tư vấn
             <span className="text-lg transition-transform group-hover:translate-x-1">

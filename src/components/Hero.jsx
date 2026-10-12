@@ -10,7 +10,7 @@ export default function Hero() {
           <h1 className="mb-[22px] max-w-[720px] font-heading text-[36px] font-extrabold leading-[1.13] sm:text-[42px] md:text-[56px]">Bắt đầu từ điều bạn muốn <em className="text-highlight not-italic">chinh phục.</em></h1>
           <p className="mb-8 max-w-[590px] text-[15px] leading-[1.8] text-surface/90 md:text-[17px]">Chương trình tiếng Anh Offline cho trẻ và các khóa học Online dành cho học sinh THPT, sinh viên, người đi làm.</p>
           <div className="flex max-w-[520px] flex-col gap-3 sm:flex-row">
-            <a className="inline-flex min-h-[52px] items-center justify-center gap-3 rounded bg-accent px-6 py-3.5 text-center text-sm font-bold text-surface transition hover:-translate-y-0.5 hover:shadow-lg" href="#tu-van">Tìm khóa học phù hợp <span aria-hidden="true">↗</span></a>
+            <a className="inline-flex min-h-[52px] items-center justify-center gap-3 rounded bg-accent px-6 py-3.5 text-center text-sm font-extrabold text-primary transition hover:-translate-y-0.5 hover:shadow-lg hover:bg-secondary-hover" href="#tu-van">Tìm khóa học phù hợp <span aria-hidden="true">↗</span></a>
             <a className="inline-flex min-h-[52px] items-center justify-center rounded border border-surface/65 bg-surface/10 px-6 py-3.5 text-center text-sm font-bold text-surface transition hover:bg-surface/20" href="#programs">Khám phá chương trình</a>
           </div>
           <div className="mt-8 flex items-center gap-2.5 text-xs text-surface/85"><span className="text-xl text-highlight" aria-hidden="true">✦</span><span>Hai hình thức học, một điểm bắt đầu: mục tiêu của bạn.</span></div>

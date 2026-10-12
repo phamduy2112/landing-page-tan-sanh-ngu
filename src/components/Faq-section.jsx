@@ -59,8 +59,8 @@ export default function FAQ() {
               <article
                 key={item.question}
                 className={`overflow-hidden rounded-[18px] border transition duration-300 ${isOpen
-                    ? "border-primary/15 bg-surface shadow-[0_12px_30px_rgba(20,34,73,0.09)]"
-                    : "border-primary/10 bg-surface hover:border-primary/20"
+                  ? "border-primary/15 bg-surface shadow-[0_12px_30px_rgba(20,34,73,0.09)]"
+                  : "border-primary/10 bg-surface hover:border-primary/20"
                   }`}
               >
                 <button
@@ -75,8 +75,8 @@ export default function FAQ() {
 
                   <span
                     className={`grid h-9 w-9 shrink-0 place-items-center rounded-full text-xl transition duration-300 ${isOpen
-                        ? "rotate-45 bg-accent text-surface"
-                        : "bg-highlight text-primary"
+                      ? "rotate-45 bg-accent text-primary"
+                      : "bg-highlight text-primary"
                       }`}
                   >
                     +

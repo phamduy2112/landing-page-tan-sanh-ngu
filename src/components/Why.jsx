@@ -175,7 +175,7 @@ function Card({ item, mobile = false }) {
         mobile ? "w-full shrink-0 snap-center" : "h-full"
       }`}
     >
-      <div className="mb-3 grid h-[50px] w-[50px] place-items-center rounded-[20px] bg-highlight text-primary transition-transform duration-300 group-hover:-translate-y-1 group-hover:text-accent">
+      <div className="mb-3 grid h-[50px] w-[50px] place-items-center rounded-[20px] bg-highlight text-primary transition-transform duration-300 group-hover:-translate-y-1">
         <Icon type={item.icon} />
       </div>
 
@@ -189,7 +189,7 @@ function Card({ item, mobile = false }) {
 
       <a
         href="#tu-van"
-        className="inline-flex items-center gap-1 pt-2 text-[13px] font-bold text-accent transition-all duration-200 hover:gap-2 hover:text-primary"
+        className="inline-flex items-center gap-1 pt-2 text-[13px] font-bold text-accent-dark transition-all duration-200 hover:gap-2 hover:text-primary"
       >
         Nhận tư vấn lộ trình
         <ArrowIcon />
