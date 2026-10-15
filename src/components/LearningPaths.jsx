@@ -1,6 +1,6 @@
 const paths = [
   { number: '01', icon: '✳', title: 'Khóa học cho trẻ', detail: 'Tiếng Anh Offline · PreStarter đến Flyers', href: '#program-kids', tone: 'bg-highlight text-primary' },
-  { number: '02', icon: '◎', title: 'Khóa học Online', detail: 'IELTS · TOEIC · Giao tiếp · Tiếng Nhật', href: '#program-online', tone: 'bg-primary/10 text-primary' },
+  { number: '02', icon: '◎', title: 'Khóa học Online', detail: 'IELTS · TOEIC · Tiếng Anh Giao tiếp', href: '#program-online', tone: 'bg-primary/10 text-primary' },
 ]
 
 export default function LearningPaths() {

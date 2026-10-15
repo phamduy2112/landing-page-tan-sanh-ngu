@@ -69,9 +69,9 @@ function TeacherCard({ teacher }) {
       </div>
 
       <div className="flex flex-1 flex-col p-5">
-        <h3 className="break-words text-[19px] font-bold leading-[1.35] text-primary">
+        <h4 className="break-words text-[19px] font-bold leading-[1.35] text-primary">
           {teacher.name}
-        </h3>
+        </h4>
 
         <div className="my-3 h-[3px] w-8 rounded-full bg-highlight" />
 

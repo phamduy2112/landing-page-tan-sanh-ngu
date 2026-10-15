@@ -8,7 +8,7 @@ export default function SectionHeading({
   return (
     <div className={`mb-4 px-5  md:px-0 ${className}`}>
       {eyebrow && (
-        <span className="mb-2 inline-block text-[11px] font-extrabold tracking-[0.14em] text-accent-dark md:text-[12px]">
+        <span className="mb-2 inline-block text-[11px] font-bold tracking-[0.14em] text-accent-dark md:text-[12px]">
           {eyebrow}
         </span>
       )}

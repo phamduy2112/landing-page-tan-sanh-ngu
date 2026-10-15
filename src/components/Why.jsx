@@ -3,24 +3,28 @@ import SectionHeading from "./section-heading";
 
 const items = [
   {
-    title: "Lộ Trình Phù Hợp",
-    desc: "Chương trình được định hướng theo độ tuổi, trình độ hiện tại và mục tiêu học của từng người học.",
+    title: "Mất Gốc & Thiếu Nền Tảng",
+    desc: "Học nhiều năm nhưng kiến thức chắp vá, phát âm chưa chuẩn ngay từ đầu dẫn đến cảm giác tự ti, ngại nói và sợ sai mỗi khi mở lời.",
+    cta: "Tư vấn lấy lại gốc",
     icon: "route",
   },
   {
-    title: "Học Đúng Hình Thức",
-    desc: "Trẻ em học trực tiếp để tăng tương tác; học sinh, sinh viên và người đi làm có thể học Online linh hoạt.",
+    title: "Học Thụ Động, Thiếu Phản Xạ",
+    desc: "Chỉ chăm chú học lý thuyết suông hoặc nghe thụ động một chiều qua màn hình, thiếu môi trường tương tác thực chiến để tạo phản xạ tự nhiên.",
+    cta: "Tư vấn phương pháp",
     icon: "online",
   },
   {
-    title: "Giáo Viên Đồng Hành",
-    desc: "Người học được hỗ trợ trong quá trình luyện tập, theo dõi tiến độ và phát triển năng lực ngoại ngữ.",
-    icon: "teacher",
+    title: "Mông Lung Không Rõ Lộ Trình",
+    desc: "Không biết trình độ hiện tại đang ở đâu, chọn nhầm lớp quá sức hoặc không đúng mục tiêu, loay hoay không biết bước tiếp theo phải làm gì.",
+    cta: "Tư vấn lộ trình học",
+    icon: "consultation",
   },
   {
-    title: "Tư Vấn Trước Khi Chọn Lớp",
-    desc: "Trao đổi nhu cầu trước khi đăng ký để lựa chọn chương trình phù hợp hơn với người học.",
-    icon: "consultation",
+    title: "Thiếu Người Kèm Cặp",
+    desc: "Tự học hoặc lớp quá đông khiến các lỗi sai về ngữ âm, ngữ pháp không được giáo viên uốn nắn kịp thời, lâu dần thành thói quen khó sửa.",
+    cta: "Tìm lớp có giáo viên kèm",
+    icon: "teacher",
   },
 ];
 
@@ -171,15 +175,14 @@ function NextIcon() {
 function Card({ item, mobile = false }) {
   return (
     <article
-      className={`group flex min-h-[250px] flex-col items-center rounded-[20px] border border-primary/10 bg-surface px-5 py-7 text-center shadow-md transition duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl ${
-        mobile ? "w-full shrink-0 snap-center" : "h-full"
-      }`}
+      className={`group flex min-h-[250px] flex-col items-center rounded-[20px] border border-primary/10 bg-surface px-5 py-7 text-center shadow-md transition duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl ${mobile ? "w-full shrink-0 snap-center" : "h-full"
+        }`}
     >
       <div className="mb-3 grid h-[50px] w-[50px] place-items-center rounded-[20px] bg-highlight text-primary transition-transform duration-300 group-hover:-translate-y-1">
         <Icon type={item.icon} />
       </div>
 
-      <h3 className="max-w-[290px] text-[17px] font-extrabold leading-[1.4] text-primary">
+      <h3 className="max-w-[290px] text-[17px] font-bold leading-[1.4] text-primary">
         {item.title}
       </h3>
 
@@ -191,7 +194,7 @@ function Card({ item, mobile = false }) {
         href="#tu-van"
         className="inline-flex items-center gap-1 pt-2 text-[13px] font-bold text-accent-dark transition-all duration-200 hover:gap-2 hover:text-primary"
       >
-        Nhận tư vấn lộ trình
+        {item.cta || "Nhận tư vấn lộ trình"}
         <ArrowIcon />
       </a>
     </article>
@@ -240,13 +243,13 @@ export default function WhySection() {
   };
 
   return (
-    <section id="ly-do-chon" className="w-full overflow-hidden bg-surface-muted py-10 lg:py-16">
+    <section id="kho-khan" className="w-full overflow-hidden bg-surface-muted py-10 lg:py-16">
       <div className="mx-auto max-w-[1320px] md:px-8">
         <SectionHeading
-          eyebrow="VÌ SAO CHỌN TÂN SANH NGỮ"
-          title="Học đúng hướng,"
-          highlight="tiến bộ từng ngày"
-          desc="Tân Sanh Ngữ đồng hành cùng người học từ bước xác định nhu cầu đến khi lựa chọn chương trình và hình thức học phù hợp."
+          eyebrow="RÀO CẢN HỌC NGOẠI NGỮ"
+          title="Những khó khăn thường gặp"
+          highlight="khiến bạn dễ bỏ dở"
+          desc="Học ngoại ngữ không khó, nhưng nếu bắt đầu sai phương pháp hoặc thiếu sự định hướng đúng đắn, bạn sẽ rất dễ nản lòng và lãng phí thời gian."
           className=" text-center"
         />
 

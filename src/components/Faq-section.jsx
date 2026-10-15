@@ -5,30 +5,29 @@ import SectionHeading from "./section-heading";
 
 const faqs = [
   {
-    question: "Tân Sanh Ngữ có những chương trình học nào?",
+    question: "Tân Sanh Ngữ hiện đào tạo những chương trình tiếng Anh Online nào?",
     answer:
-      "Tân Sanh Ngữ hiện có các chương trình tiếng Anh cho trẻ em gồm PreStarter, Starters, Movers và Flyers; cùng các khóa học Online như IELTS, TOEIC, giao tiếp và tiếng Nhật.",
+      "Trung tâm tập trung đào tạo các chương trình Tiếng Anh Online chất lượng cao gồm: Tiếng Anh Giao tiếp (phản xạ & công sở), Luyện thi TOEIC chuẩn đầu ra và Luyện thi IELTS mục tiêu dành cho học sinh THPT, sinh viên và người đi làm.",
   },
   {
-    question: "Trẻ em học theo hình thức nào?",
+    question: "Học Online tại Tân Sanh Ngữ có tương tác trực tiếp với giảng viên không?",
     answer:
-      "Các lớp tiếng Anh dành cho trẻ nhỏ được tổ chức theo hình thức Offline, giúp giáo viên dễ quan sát, tương tác và đồng hành cùng con trong quá trình học.",
+      "Có. Lớp học Online được tổ chức theo hình thức tương tác trực tiếp hai chiều cùng giảng viên. Bạn được sửa lỗi phát âm, hướng dẫn luyện đề và giải đáp thắc mắc ngay trong buổi học, hoàn toàn không phải các video thu sẵn thụ động.",
   },
   {
-    question:
-      "Học sinh, sinh viên và người đi làm có thể học Online không?",
+    question: "Lịch học Online có linh hoạt cho người bận rộn không?",
     answer:
-      "Có. Các chương trình IELTS, TOEIC, giao tiếp và tiếng Nhật được triển khai theo hình thức Online, phù hợp với người học cần chủ động về thời gian.",
+      "Có. Các lớp học Online được sắp xếp vào các khung giờ buổi tối linh hoạt (như 19:30 - 21:00 hoặc 20:00 - 21:30), rất thuận tiện cho học sinh kẹt lịch trên trường, sinh viên và người đi làm.",
   },
   {
-    question: "Làm sao để chọn được khóa học phù hợp?",
+    question: "Tôi bị mất gốc hoặc chưa rõ trình độ thì bắt đầu từ đâu?",
     answer:
-      "Bạn có thể để lại thông tin đăng ký. Tư vấn viên sẽ trao đổi thêm về độ tuổi, trình độ hiện tại, mục tiêu học và hình thức học để gợi ý chương trình phù hợp.",
+      "Bạn chỉ cần để lại thông tin tại form đăng ký. Đội ngũ chuyên môn của Tân Sanh Ngữ sẽ liên hệ kiểm tra trình độ đầu vào miễn phí và tư vấn lộ trình học Online phù hợp nhất với năng lực và mục tiêu của bạn.",
   },
   {
-    question: "Tôi có thể hỏi về lịch học và học phí ở đâu?",
+    question: "Tôi có thể hỏi thông tin về lịch học và học phí ở đâu?",
     answer:
-      "Bạn hãy để lại thông tin ở form đăng ký hoặc liên hệ trực tiếp với Tân Sanh Ngữ. Trung tâm sẽ tư vấn chi tiết về lịch học, lớp phù hợp và các thông tin liên quan.",
+      "Lịch khai giảng và học phí các lớp Online được cập nhật liên tục. Bạn hãy để lại thông tin ở form tư vấn hoặc liên hệ trực tiếp với Tân Sanh Ngữ để nhận thông tin chi tiết và chính xác nhất.",
   },
 ];
 
@@ -69,7 +68,7 @@ export default function FAQ() {
                   aria-expanded={isOpen}
                   className="flex w-full items-center justify-between gap-5 px-5 py-5 text-left md:px-6"
                 >
-                  <span className="text-[15px] font-extrabold leading-[1.5] text-primary md:text-[16px]">
+                  <span className="text-[15px] font-bold leading-[1.5] text-primary md:text-[16px]">
                     {item.question}
                   </span>
 

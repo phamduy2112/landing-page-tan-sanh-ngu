@@ -52,7 +52,7 @@ export default function Roadmap() {
                 </span>
 
                 <div>
-                  <h3 className="text-[14px] font-extrabold text-primary">
+                  <h3 className="text-[14px] font-bold text-primary">
                     {step.title}
                   </h3>
 
@@ -85,7 +85,7 @@ export default function Roadmap() {
 
           <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent" />
 
-         
+
         </div>
       </div>
     </section>
