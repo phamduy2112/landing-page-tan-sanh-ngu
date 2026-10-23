@@ -180,7 +180,7 @@ function CourseCard({ item }) {
 
         {/* MỤC TIÊU */}
         <div>
-          <h4 className="text-[14px] font-extrabold uppercase tracking-wide text-[#344054]">
+          <h4 className="text-[14px] font-bold uppercase tracking-wide text-[#344054]">
             Mục tiêu khóa học
           </h4>
 
@@ -201,7 +201,7 @@ function CourseCard({ item }) {
 
         {/* THÔNG TIN HỌC TẬP */}
         <div className="mt-5">
-          <h4 className="text-[14px] font-extrabold uppercase tracking-wide text-[#344054]">
+          <h4 className="text-[14px] font-bold uppercase tracking-wide text-[#344054]">
             Thông tin học tập
           </h4>
 

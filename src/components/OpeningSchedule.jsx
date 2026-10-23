@@ -162,8 +162,8 @@ export default function ScheduleTable() {
                 <td className="px-6 py-5 text-center align-middle">
                   <span
                     className={`inline-flex items-center justify-center rounded-full border px-3 py-1.5 text-xs font-semibold ${course.isFull
-                        ? "border-primary/20 bg-primary/5 text-primary"
-                        : "border-emerald-200 bg-emerald-50 text-emerald-700"
+                      ? "border-primary/20 bg-primary/5 text-primary"
+                      : "border-emerald-200 bg-emerald-50 text-emerald-700"
                       }`}
                   >
                     {course.status}
