@@ -1,123 +1,245 @@
+
 import { useState } from "react";
 import SectionHeading from "./section-heading";
-import { MdKeyboardArrowRight } from "react-icons/md";
+import {
+  MdCheck,
+  MdCalendarMonth,
+  MdOutlinePerson,
+  MdTrackChanges,
+  MdArrowForward,
+} from "react-icons/md";
 
 const courses = [
-  // GIAO TIẾP
+  // IELTS
   {
     number: "01",
-    type: "GIAO TIẾP",
-    title: "Tiếng Anh Giao Tiếp Phản Xạ",
-    desc: "Củng cố phát âm chuẩn, rèn phản xạ hội thoại tự nhiên trong đời sống hàng ngày và môi trường học tập, làm việc.",
-    cta: "Tư vấn lộ trình Online",
+    type: "IELTS",
+    title: "IELTS Foundation",
+    desc: "Xây dựng nền tảng tiếng Anh vững chắc, làm quen với IELTS và phát triển tư duy học tiếng Anh hiệu quả.",
+    goals: [
+      "Củng cố ngữ pháp và từ vựng nền tảng",
+      "Làm quen cấu trúc bài thi IELTS",
+      "Luyện phát âm và phản xạ giao tiếp",
+      "Xây dựng tư duy tiếng Anh mạch lạc",
+    ],
+    duration: "Lộ trình theo trình độ đầu vào",
+    audience: "Người mất gốc hoặc mới bắt đầu",
+    outcome: "Hướng tới nền tảng IELTS 4.0+",
+    cta: "Tư vấn khóa IELTS",
+    image: "/assets/dangcapnhan.png",
     href: "#tu-van",
-    badgeClass: "bg-primary text-surface",
-    linkClass: "text-primary",
   },
   {
     number: "02",
-    type: "GIAO TIẾP",
-    title: "Tiếng Anh Giao Tiếp Công Sở",
-    desc: "Nâng cao vốn từ vựng thực tế, kỹ năng thuyết trình, trao đổi email và tự tin phỏng vấn tuyển dụng.",
-    cta: "Tư vấn lộ trình Online",
+    type: "IELTS",
+    title: "Pre - IELTS",
+    desc: "Phát triển toàn diện 4 kỹ năng Nghe – Nói – Đọc – Viết, từng bước làm quen với các dạng bài thi IELTS.",
+    goals: [
+      "Phát triển đồng đều 4 kỹ năng",
+      "Mở rộng vốn từ vựng học thuật",
+      "Luyện Speaking theo chủ đề",
+      "Tiếp cận chiến thuật làm bài IELTS",
+    ],
+    duration: "Lộ trình theo năng lực học viên",
+    audience: "Học viên đã có kiến thức cơ bản",
+    outcome: "Hướng tới IELTS 4.5 – 5.5",
+    cta: "Tư vấn khóa IELTS",
+    image: "/assets/dangcapnhan.png",
     href: "#tu-van",
-    badgeClass: "bg-primary text-surface",
-    linkClass: "text-primary",
+  },
+  {
+    number: "03",
+    type: "IELTS",
+    title: "IELTS Intermediate",
+    desc: "Luyện đề chuyên sâu, nâng cao khả năng xử lý bài thi và phát triển chiến thuật cải thiện điểm số.",
+    goals: [
+      "Luyện đề theo cấu trúc IELTS",
+      "Nâng cao kỹ năng Reading và Listening",
+      "Luyện Speaking và sửa lỗi Writing",
+      "Tối ưu thời gian làm bài thi",
+    ],
+    duration: "Lộ trình theo mục tiêu điểm số",
+    audience: "Học viên có nền tảng IELTS",
+    outcome: "Hướng tới IELTS 6.0+",
+    cta: "Tư vấn khóa IELTS",
+    image: "/assets/dangcapnhan.png",
+    href: "#tu-van",
   },
 
   // TOEIC
   {
-    number: "03",
-    type: "TOEIC",
-    title: "TOEIC Foundation",
-    desc: "Lấy lại căn bản ngữ pháp, xây dựng vốn từ vựng học thuật và làm quen các dạng bài nghe - đọc trọng tâm.",
-    cta: "Tư vấn khóa TOEIC",
-    href: "#tu-van",
-    badgeClass: "bg-secondary text-primary font-bold",
-    linkClass: "text-primary",
-  },
-  {
     number: "04",
     type: "TOEIC",
-    title: "TOEIC Luyện Đề Chuẩn Đầu Ra",
-    desc: "Rèn chiến thuật làm bài thi Listening & Reading, khắc phục bẫy đề thi, bứt phá điểm số xét tốt nghiệp và đi làm.",
+    title: "TOEIC Foundation",
+    desc: "Lấy lại căn bản tiếng Anh, xây dựng từ vựng và làm quen với cấu trúc bài thi TOEIC.",
+    goals: [
+      "Củng cố ngữ pháp tiếng Anh cơ bản",
+      "Xây dựng từ vựng TOEIC trọng tâm",
+      "Làm quen Listening và Reading",
+      "Rèn kỹ năng nhận diện dạng câu hỏi",
+    ],
+    duration: "Lộ trình theo trình độ đầu vào",
+    audience: "Người mới bắt đầu học TOEIC",
+    outcome: "Hướng tới nền tảng TOEIC 450+",
     cta: "Tư vấn khóa TOEIC",
+    image: "/assets/dangcapnhan.png",
     href: "#tu-van",
-    badgeClass: "bg-secondary text-primary font-bold",
-    linkClass: "text-primary",
   },
-
-  // IELTS
   {
     number: "05",
-    type: "IELTS",
-    title: "IELTS Foundation",
-    desc: "Xây nền ngữ pháp vững chắc, chuẩn hóa phát âm và làm quen tư duy học thuật cho người mới bắt đầu.",
-    cta: "Tư vấn khóa IELTS",
+    type: "TOEIC",
+    title: "TOEIC Luyện Đề Chuẩn Đầu Ra",
+    desc: "Rèn luyện chiến thuật làm bài Listening và Reading, giúp nâng cao điểm số phục vụ học tập và công việc.",
+    goals: [
+      "Luyện đề theo cấu trúc TOEIC",
+      "Nhận diện các bẫy thường gặp",
+      "Tăng tốc độ nghe và đọc hiểu",
+      "Rèn kỹ năng phân bổ thời gian",
+    ],
+    duration: "Lộ trình theo mục tiêu điểm số",
+    audience: "Sinh viên và người đi làm",
+    outcome: "Hướng tới TOEIC 650+",
+    cta: "Tư vấn khóa TOEIC",
+    image: "/assets/dangcapnhan.png",
     href: "#tu-van",
-    badgeClass: "bg-primary text-surface",
-    linkClass: "text-primary",
   },
+
+  // GIAO TIẾP
   {
     number: "06",
-    type: "IELTS",
-    title: "Pre - IELTS",
-    desc: "Phát triển toàn diện 4 kỹ năng Nghe - Nói - Đọc - Viết, tiếp cận cấu trúc đề thi và chiến thuật xử lý câu hỏi.",
-    cta: "Tư vấn khóa IELTS",
+    type: "GIAO TIẾP",
+    title: "Tiếng Anh Giao Tiếp Phản Xạ",
+    desc: "Cải thiện phát âm, phát triển phản xạ nghe nói và tự tin giao tiếp trong các tình huống thực tế.",
+    goals: [
+      "Chuẩn hóa phát âm tiếng Anh",
+      "Luyện phản xạ nghe – nói tự nhiên",
+      "Giao tiếp theo tình huống thực tế",
+      "Tăng sự tự tin khi hội thoại",
+    ],
+    duration: "Lộ trình linh hoạt theo trình độ",
+    audience: "Người mới học và mất gốc",
+    outcome: "Giao tiếp cơ bản trong đời sống",
+    cta: "Tư vấn khóa giao tiếp",
+    image: "/assets/dangcapnhan.png",
     href: "#tu-van",
-    badgeClass: "bg-primary text-surface",
-    linkClass: "text-primary",
   },
   {
     number: "07",
-    type: "IELTS",
-    title: "IELTS INTERMEDIATE",
-    desc: "Luyện đề chuyên sâu, được giảng viên sửa bài chi tiết từng kỹ năng, tối ưu điểm số xét tuyển ĐH và du học.",
-    cta: "Tư vấn khóa IELTS",
+    type: "GIAO TIẾP",
+    title: "Tiếng Anh Giao Tiếp Công Sở",
+    desc: "Nâng cao kỹ năng giao tiếp tiếng Anh trong công việc, thuyết trình, email và phỏng vấn tuyển dụng.",
+    goals: [
+      "Giao tiếp trong môi trường công sở",
+      "Viết email tiếng Anh chuyên nghiệp",
+      "Thuyết trình và trao đổi công việc",
+      "Thực hành phỏng vấn bằng tiếng Anh",
+    ],
+    duration: "Lộ trình theo nhu cầu công việc",
+    audience: "Sinh viên và người đang đi làm",
+    outcome: "Ứng dụng tiếng Anh vào công việc",
+    cta: "Tư vấn khóa giao tiếp",
+    image: "/assets/dangcapnhan.png",
     href: "#tu-van",
-    badgeClass: "bg-primary text-surface",
-    linkClass: "text-primary",
   },
 ];
 
 function CourseCard({ item }) {
   return (
-    <article className="group bg-white flex flex-col overflow-hidden rounded-[24px] border border-primary/10 shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-xl">
-      <div className="relative h-[200px] shrink-0 overflow-hidden md:h-[260px]">
+    <article className="group flex h-full flex-col overflow-hidden rounded-[24px] border border-primary/10 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-xl">
+      {/* HÌNH ẢNH */}
+      <div className="relative h-[145px] shrink-0 overflow-hidden bg-primary/5 md:h-[155px]">
         <img
-          src="/assets/dangcapnhan.png"
-          alt="Tư vấn lộ trình học Online tại Tân Sanh Ngữ"
-          className="h-full w-full object-contain p-4 transition duration-500 group-hover:scale-[1.05]"
+          src={item.image}
+          alt={item.title}
+          loading="lazy"
+          className="h-full w-full object-contain p-2 transition-transform duration-500 group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/10 to-transparent" />
 
-        <span
-          className={`absolute bottom-4 left-4 md:bottom-5 md:left-5 rounded-full px-3 py-2 text-[10px] font-extrabold tracking-[0.1em] ${item.badgeClass}`}
-        >
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent" />
+
+        <span className="absolute bottom-3 left-4 rounded-full bg-primary px-3 py-1 text-[11px] font-extrabold tracking-wide text-white shadow-md">
           {item.type}
         </span>
       </div>
 
-      <div className="flex flex-1 flex-col p-5 md:p-6 lg:p-8">
-        <h3 className="text-[20px] font-bold leading-[1.2] text-primary md:text-[23px] lg:text-[23px]">
-          {item.title}
-        </h3>
+      {/* NỘI DUNG CARD */}
+      <div className="flex flex-1 flex-col p-4 md:p-5">
+        {/* TÊN KHÓA HỌC */}
+        <div>
+          <h3 className="text-[19px] font-extrabold leading-[1.3] text-primary md:text-[21px]">
+            {item.title}
+          </h3>
 
-        <p className="mt-3 text-[14px] leading-[1.7] text-text-muted">
-          {item.desc}
-        </p>
+          <p className="mt-2 text-[14px] leading-[1.6] text-text-muted">
+            {item.desc}
+          </p>
+        </div>
 
-        <div className="my-4 h-px w-full bg-primary/10" />
+        {/* ĐƯỜNG PHÂN CÁCH */}
+        <div className="my-4 h-px bg-primary/10" />
 
-        <a
-          href={item.href}
-          className="group/link mt-auto inline-flex w-fit items-center gap-2 text-[13px] font-bold text-primary transition-colors hover:text-accent-dark"
-        >
-          {item.cta}
-          <span className="transition-transform duration-300 group-hover/link:translate-x-1">
-            <MdKeyboardArrowRight size={18} />
-          </span>
-        </a>
+        {/* MỤC TIÊU */}
+        <div>
+          <h4 className="text-[14px] font-extrabold uppercase tracking-wide text-[#344054]">
+            Mục tiêu khóa học
+          </h4>
+
+          <ul className="mt-3 space-y-2">
+            {item.goals.map((goal, index) => (
+              <li key={index} className="flex items-start gap-2.5">
+                <span className="mt-[3px] flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/10">
+                  <MdCheck className="text-[15px] text-primary" />
+                </span>
+
+                <span className="text-[14px] leading-[1.5] text-[#475467]">
+                  {goal}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* THÔNG TIN HỌC TẬP */}
+        <div className="mt-5">
+          <h4 className="text-[14px] font-extrabold uppercase tracking-wide text-[#344054]">
+            Thông tin học tập
+          </h4>
+
+          <div className="mt-3 space-y-2.5">
+            <div className="flex items-start gap-2.5">
+              <MdCalendarMonth className="mt-0.5 shrink-0 text-[21px] text-primary" />
+              <p className="text-[14px] leading-[1.5] text-[#475467]">
+                {item.duration}
+              </p>
+            </div>
+
+            <div className="flex items-start gap-2.5">
+              <MdOutlinePerson className="mt-0.5 shrink-0 text-[21px] text-primary" />
+              <p className="text-[14px] leading-[1.5] text-[#475467]">
+                {item.audience}
+              </p>
+            </div>
+
+            <div className="flex items-start gap-2.5">
+              <MdTrackChanges className="mt-0.5 shrink-0 text-[21px] text-primary" />
+              <p className="text-[14px] leading-[1.5] text-[#475467]">
+                {item.outcome}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* CTA */}
+        <div className="mt-auto pt-5">
+          <a
+            href={item.href}
+            className="group/btn flex min-h-[44px] w-full items-center justify-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-center text-[14px] font-bold text-white shadow-sm transition-all duration-300 hover:brightness-110 hover:shadow-lg"
+          >
+            {item.cta}
+
+            <MdArrowForward className="text-[19px] transition-transform duration-300 group-hover/btn:translate-x-1" />
+          </a>
+        </div>
       </div>
     </article>
   );
@@ -125,29 +247,39 @@ function CourseCard({ item }) {
 
 export default function CoursesSection() {
   const categories = ["IELTS", "TOEIC", "GIAO TIẾP"];
-  const [activeCategory, setActiveCategory] = useState(categories[0]);
 
-  const filteredCourses = courses.filter((course) => course.type === activeCategory);
+  const [activeCategory, setActiveCategory] = useState("IELTS");
+
+  const filteredCourses = courses.filter(
+    (course) => course.type === activeCategory
+  );
 
   return (
-    <section id="courses" className="overflow-hidden bg-surface-muted py-10 lg:py-16 px-4 md:px-0">
+    <section
+      id="courses"
+      className="overflow-hidden bg-surface-muted px-4 py-10 md:px-6 lg:py-14"
+    >
       <div className="mx-auto max-w-[1200px]">
+        {/* TIÊU ĐỀ SECTION */}
         <SectionHeading
           eyebrow="CHƯƠNG TRÌNH ĐÀO TẠO ONLINE"
           title="Các Khóa Học Online Tại"
           highlight="Tân Sanh Ngữ"
           desc="Hệ thống chương trình ngoại ngữ Online tương tác cao, bám sát nhu cầu học tập, xét tốt nghiệp và thăng tiến sự nghiệp."
-          className="mb-2 text-center"
+          className="mb-4 text-center"
         />
 
-        <div className="mb-5 flex w-full overflow-x-auto snap-x snap-mandatory justify-start md:justify-center gap-3 md:gap-4 pb-2 md:pb-0 px-2 md:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+        {/* TAB DANH MỤC */}
+        <div className="mb-6 flex w-full snap-x snap-mandatory justify-start gap-2.5 overflow-x-auto px-1 pb-2 md:justify-center md:gap-4 md:px-0 [&::-webkit-scrollbar]:hidden [scrollbar-width:none]">
           {categories.map((category) => (
             <button
               key={category}
+              type="button"
               onClick={() => setActiveCategory(category)}
-              className={`shrink-0 snap-center rounded-full px-5 py-2.5 md:px-8 md:py-3 text-[14px] md:text-[16px] font-bold transition-all duration-300 ${activeCategory === category
-                ? "bg-primary text-surface shadow-lg md:scale-105"
-                : "bg-surface text-primary border border-primary/20 hover:bg-primary/5 md:hover:scale-105"
+              aria-pressed={activeCategory === category}
+              className={`shrink-0 snap-center rounded-full px-6 py-2.5 text-[14px] font-bold transition-all duration-300 md:px-9 md:py-3 md:text-[15px] ${activeCategory === category
+                ? "bg-primary text-white shadow-lg md:scale-105"
+                : "border border-primary/20 bg-white text-primary hover:bg-primary/5"
                 }`}
             >
               {category}
@@ -155,7 +287,8 @@ export default function CoursesSection() {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {/* DANH SÁCH CARD */}
+        <div className="grid grid-cols-1 items-stretch gap-4 md:gap-5 md:grid-cols-2 lg:grid-cols-3">
           {filteredCourses.map((item) => (
             <CourseCard key={item.number} item={item} />
           ))}

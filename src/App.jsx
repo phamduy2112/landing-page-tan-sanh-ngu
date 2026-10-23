@@ -22,7 +22,7 @@ export default function App() {
       <Header />
       <main id="main-content">
         <Hero />
-        <WhySection />
+        {/* <WhySection /> */}
         <Highlights />
         <CoursesSection />
         <ScheduleTable />

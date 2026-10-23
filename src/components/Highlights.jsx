@@ -1,3 +1,4 @@
+
 import ButtonCTA from "./button-cta";
 import SectionHeading from "./section-heading";
 
@@ -8,8 +9,9 @@ export default function Highlights() {
       className="overflow-hidden bg-white py-10 lg:py-16"
     >
       <div className="container mx-auto grid w-[calc(100%-2rem)] max-w-[1200px] items-center gap-10 md:w-[calc(100%-5rem)] md:grid-cols-2 md:gap-16">
-        {/* Hình bên trái (hiển thị dưới cùng trên mobile) */}
-        <div className="relative min-h-[380px] overflow-hidden rounded-[24px] bg-primary md:min-h-[600px] order-2 md:order-1">
+
+        {/* ZONE 5 - HÌNH ẢNH BÊN TRÁI */}
+        <div className="relative order-2 min-h-[380px] overflow-hidden rounded-[24px] bg-primary md:order-1 md:min-h-[600px]">
           <img
             src="/assets/dangcapnhan.png"
             alt="Hoạt động học ngoại ngữ tại Tân Sanh Ngữ"
@@ -29,63 +31,72 @@ export default function Highlights() {
           </div>
         </div>
 
-        {/* Content bên phải (hiển thị trên cùng trên mobile) */}
-        <div className="flex flex-col justify-center order-1 md:order-2">
+        {/* NỘI DUNG BÊN PHẢI */}
+        <div className="order-1 flex flex-col justify-center md:order-2">
+
+          {/* ZONE 1 - GIỚI THIỆU TRUNG TÂM */}
           <SectionHeading
-            eyebrow="GIỚI THIỆU TÂN SANH NGỮ"
-            title="Tân Sanh Ngữ –"
-            highlight="đào tạo ngoại ngữ Online thực chiến"
-            desc="Tập trung phát triển các chương trình ngoại ngữ Online chất lượng cao dành cho học sinh THPT, sinh viên và người đi làm. Tối ưu thời gian, tương tác trực tiếp cùng giảng viên và theo sát tiến độ từng học viên."
+            eyebrow="GIỚI THIỆU TRUNG TÂM TÂN SANH NGỮ"
+            title="TÂN SANH NGỮ –"
+            highlight="NƠI TIẾNG ANH LÀ HÀNH TRÌNH KHÁM PHÁ VÀ CHINH PHỤC"
+            desc="Tại Tân Sanh Ngữ, chúng tôi biến việc học ngoại ngữ thành một hành trình khám phá thú vị với mô hình học trực tuyến tương tác. Giáo trình luôn được thiết kế tinh gọn, đi thẳng vào nhu cầu thi cử các chứng chỉ IELTS, TOEIC hoặc làm việc của từng cá nhân. Hãy để Tân Sanh Ngữ đồng hành cùng bạn tối ưu thời gian và chinh phục mọi mục tiêu ngoại ngữ."
             className="mb-7 px-0 text-center lg:text-left [&>p]:mx-0"
           />
+
           <div className="grid gap-4">
-            {/* Card lớn */}
+
+            {/* ZONE 2 - MÔ HÌNH HỌC ONLINE */}
             <article className="rounded-[20px] bg-primary p-6 text-surface md:p-7">
               <span className="text-[11px] font-bold tracking-[0.12em] text-highlight">
                 01 / MÔ HÌNH HỌC ONLINE HIỆU QUẢ
               </span>
 
               <h3 className="mt-3 text-[22px] font-bold leading-[1.3]">
-                Tương tác trực tiếp, tối ưu quỹ thời gian
+                Tương tác tăng cường, gia tăng hiệu quả
               </h3>
 
               <p className="mt-2 max-w-[480px] text-[13px] leading-[1.7] text-surface/75">
-                Lớp học Online được thiết kế với tính tương tác hai chiều cao cùng giảng viên. Bạn được sửa lỗi phát âm, hướng dẫn luyện đề trực tiếp và theo sát tiến độ, tiết kiệm tối đa thời gian di chuyển mà vẫn đạt hiệu quả học tập vượt trội.
+                Lớp học Online nhưng tương tác giữa giáo viên và học viên là điểm mạnh tại Tân Sanh Ngữ. Thầy cô sẽ trực tiếp sửa lỗi phát âm, hướng dẫn giải đề và đốc thúc tiến độ mỗi ngày, giúp bạn tiết kiệm thời gian đi lại mà vẫn đạt kết quả cao nhất.
               </p>
             </article>
 
-            {/* Hai card nhỏ */}
+            {/* ZONE 3 + ZONE 4 */}
             <div className="grid gap-4 sm:grid-cols-2">
+
+              {/* ZONE 3 - CHƯƠNG TRÌNH THỰC TIỄN */}
               <article className="rounded-[18px] border border-primary/10 bg-surface p-5">
-                <span className="text-[11px] font-bold tracking-[0.12em] text-accent">
-                  02 / CHƯƠNG TRÌNH ĐA DẠNG
+                <span className="text-[10px] font-bold tracking-[0.12em] text-accent">
+                  02 / CHƯƠNG TRÌNH THỰC TIỄN
                 </span>
 
                 <h3 className="mt-3 text-[16px] font-bold leading-[1.4] text-primary">
-                  Đúng mục tiêu thực tế
+                  Học đúng trọng tâm, bám đúng mục tiêu
                 </h3>
 
                 <p className="mt-2 text-[12px] leading-[1.7] text-text-muted">
-                  Đào tạo chuyên sâu: Tiếng Anh Giao tiếp, Luyện thi TOEIC chuẩn đầu ra và IELTS chinh phục mục tiêu.
+                  Cung cấp các khóa học IELTS, TOEIC và tiếng Anh giao tiếp.
                 </p>
               </article>
 
+              {/* ZONE 4 - LỘ TRÌNH CÁ NHÂN */}
               <article className="rounded-[18px] bg-highlight p-5">
-                <span className="text-[11px] font-bold tracking-[0.12em] text-primary">
-                  03 / LỘ TRÌNH CÁ NHÂN HÓA
+                <span className="text-[10px] font-bold tracking-[0.12em] text-primary">
+                  03 / LỘ TRÌNH DÀNH RIÊNG CHO BẠN
                 </span>
 
                 <h3 className="mt-3 text-[16px] font-bold leading-[1.4] text-primary">
-                  Đánh giá đúng năng lực
+                  Đánh giá, đào tạo, phát triển
                 </h3>
 
                 <p className="mt-2 text-[12px] leading-[1.7] text-primary/75">
-                  Kiểm tra trình độ đầu vào miễn phí và tư vấn lộ trình bám sát mục tiêu: xét tuyển ĐH, chuẩn đầu ra tốt nghiệp hay giao tiếp công việc.
+                  Bạn sẽ được kiểm tra trình độ đầu vào miễn phí để biết chính xác mình đang ở đâu. Từ đó, trung tâm tư vấn lộ trình học vừa sức, tối ưu thời gian để bạn học nhẹ nhàng nhưng vẫn đạt đúng mức điểm mong muốn.
                 </p>
               </article>
+
             </div>
           </div>
 
+          {/* CTA */}
           <ButtonCTA text="Nhận tư vấn lộ trình Online" />
         </div>
       </div>
