@@ -11,11 +11,11 @@ export default function Highlights() {
       <div className="container mx-auto grid w-[calc(100%-2rem)] max-w-[1200px] items-center gap-10 md:w-[calc(100%-5rem)] md:grid-cols-2 md:gap-16">
 
         {/* ZONE 5 - HÌNH ẢNH BÊN TRÁI */}
-        <div className="relative order-2 min-h-[380px] overflow-hidden rounded-[24px] bg-primary md:order-1 w-[100%] md:min-h-[500px]">
+        <div className="relative order-2 overflow-hidden rounded-[24px] bg-primary md:order-1 w-[100%] h-[100%]">
           <img
-            src="/assets/Screenshot 2026-10-23 141905.png"
+            src="/assets/Duy Profile0011.jpg"
             alt="Hoạt động học ngoại ngữ tại Tân Sanh Ngữ"
-            className="absolute inset-0 h-full w-full object-contain"
+            className="absolute inset-0 h-full w-full object-cover"
           />
 
           <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/10 to-transparent" />
