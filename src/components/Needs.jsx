@@ -171,7 +171,7 @@ function CourseCard({ item }) {
       <div className="flex flex-1 flex-col p-4 md:p-5">
         {/* TÊN KHÓA HỌC */}
         <div>
-          <h3 className="text-[19px] font-extrabold leading-[1.3] text-primary md:text-[21px]">
+          <h3 className="text-[19px] font-bold leading-[1.3] text-primary md:text-[21px]">
             {item.title}
           </h3>
 
