@@ -70,7 +70,7 @@ export default function Hero() {
             {/* Nút 2: Nền trắng chữ Navy (Solid Surface) nổi bật cấp 2 */}
             <a
               className="inline-flex min-h-[52px] items-center justify-center rounded bg-surface px-5 py-3.5 text-center text-sm font-bold text-primary shadow-sm transition hover:-translate-y-0.5 hover:bg-surface-muted hover:shadow-md"
-              href="#lich-khai-giang"
+              href="#lich-hoc"
             >
               Lịch Khai Giảng
             </a>
