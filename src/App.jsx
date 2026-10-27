@@ -20,24 +20,19 @@ export default function App() {
   return (
     <>
       <Header />
+
       <main id="main-content">
         <Hero />
-        {/* <WhySection /> */}
         <Highlights />
         <CoursesSection />
         <ScheduleTable />
-        {/* <Programs /> */}
 
-        {/* <Roadmap /> */}
         <TeacherSlider />
-        {/* <VideoSection /> */}
-        {/* <FeedbackSlider /> */}
         <FAQ />
 
         <ConsultationForm />
       </main>
       <Footer />
-      {/* <FloatingContact /> */}
     </>
   )
 }
