@@ -14,7 +14,7 @@ const courses = [
   {
     number: "01",
     type: "IELTS",
-    title: "IELTS FOUNDATION (nền tảng)",
+    title: "IELTS Foundation (nền tảng)",
     desc: "Hệ thống ngữ pháp, từ vựng tiếng Anh từ đầu, làm quen bài thi IELTS và từng bước rèn luyện cả 4 kỹ năng với mục tiêu 4.5+.",
     goals: [
       "Làm quen cấu trúc bài thi IELTS",
@@ -34,7 +34,7 @@ const courses = [
   {
     number: "02",
     type: "IELTS",
-    title: "IELTS INTERMEDIATE (trung cấp)",
+    title: "IELTS Intermediate (trung cấp)",
     desc: "Tiếp nối chương trình nền tảng, tăng cường thực hành, rèn luyện và phát triển kỹ năng làm bài IELTS với mục tiêu 5.5+.",
     goals: [
       "Mở rộng từ vựng và ngữ pháp học thuật",
@@ -45,7 +45,7 @@ const courses = [
     ],
     duration: "Thời lượng: Bổ sung sau",
     format: "Hình thức: 1-1 hoặc nhóm 4-6 học viên",
-    audience: "Đối tượng: Học viên đã hoàn thành IELTS FOUNDATION (4.5+) hoặc kiểm tra năng lực đầu vào",
+    audience: "Đối tượng: Học viên đã hoàn thành IELTS Foundation (4.5+) hoặc kiểm tra năng lực đầu vào",
     outcome: "Mục tiêu: IELTS Overall 5.5+",
     cta: "Tư vấn khóa IELTS",
     image: "/assets/dangcapnhan.png",
