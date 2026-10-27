@@ -37,7 +37,7 @@ export default function App() {
         <ConsultationForm />
       </main>
       <Footer />
-      {/* <FloatingContact /> */}
+      <FloatingContact />
     </>
   )
 }

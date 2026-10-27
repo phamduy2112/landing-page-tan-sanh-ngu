@@ -21,7 +21,7 @@ export default function Highlights() {
           <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/10 to-transparent" />
 
           <div className="absolute bottom-7 left-7 right-7">
-            <span className="mb-3 inline-flex rounded-full bg-highlight px-3 py-2 text-[10px] font-bold tracking-[0.1em] text-primary">
+            <span className="mb-3 inline-flex rounded-full bg-highlight px-3 py-2 text-xs font-bold tracking-[0.1em] text-primary">
               TÂN SANH NGỮ
             </span>
 
@@ -47,15 +47,15 @@ export default function Highlights() {
 
             {/* ZONE 2 - MÔ HÌNH HỌC ONLINE */}
             <article className="rounded-[20px] bg-primary p-6 text-surface md:p-7">
-              <span className="text-[11px] font-bold tracking-[0.12em] text-highlight">
+              <span className="text-[10px] font-bold tracking-[0.12em] text-highlight">
                 01 / MÔ HÌNH HỌC ONLINE HIỆU QUẢ
               </span>
 
-              <h3 className="mt-3 text-[22px] font-bold leading-[1.3]">
+              <h3 className="mt-1 text-[16px] font-bold leading-[1.3]">
                 Tương tác tăng cường, gia tăng hiệu quả
               </h3>
 
-              <p className="mt-2 max-w-[480px] text-[13px] leading-[1.7] text-surface/75">
+              <p className="mt-2 max-w-[480px] text-[12px] leading-[1.7] text-surface/75">
                 Lớp học Online nhưng tương tác giữa giáo viên và học viên là điểm mạnh tại Tân Sanh Ngữ. Thầy cô sẽ trực tiếp sửa lỗi phát âm, hướng dẫn giải đề và đốc thúc tiến độ mỗi ngày, giúp bạn tiết kiệm thời gian đi lại mà vẫn đạt kết quả cao nhất.
               </p>
             </article>
@@ -69,7 +69,7 @@ export default function Highlights() {
                   02 / CHƯƠNG TRÌNH THỰC TIỄN
                 </span>
 
-                <h3 className="mt-3 text-[16px] font-bold leading-[1.4] text-primary">
+                <h3 className="mt-1 text-[16px] font-bold leading-[1.4] text-primary">
                   Học đúng trọng tâm, bám đúng mục tiêu
                 </h3>
 
@@ -84,7 +84,7 @@ export default function Highlights() {
                   03 / LỘ TRÌNH DÀNH RIÊNG CHO BẠN
                 </span>
 
-                <h3 className="mt-3 text-[16px] font-bold leading-[1.4] text-primary">
+                <h3 className="mt-1 text-[16px] font-bold leading-[1.4] text-primary">
                   Đánh giá, đào tạo, phát triển
                 </h3>
 

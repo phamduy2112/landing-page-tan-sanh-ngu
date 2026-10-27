@@ -14,17 +14,19 @@ const courses = [
   {
     number: "01",
     type: "IELTS",
-    title: "IELTS Foundation",
-    desc: "Xây dựng nền tảng tiếng Anh vững chắc, làm quen với IELTS và phát triển tư duy học tiếng Anh hiệu quả.",
+    title: "IELTS FOUNDATION (nền tảng)",
+    desc: "Hệ thống ngữ pháp, từ vựng tiếng Anh từ đầu, làm quen bài thi IELTS và từng bước rèn luyện cả 4 kỹ năng với mục tiêu 4.5+.",
     goals: [
-      "Củng cố ngữ pháp và từ vựng nền tảng",
       "Làm quen cấu trúc bài thi IELTS",
-      "Luyện phát âm và phản xạ giao tiếp",
-      "Xây dựng tư duy tiếng Anh mạch lạc",
+      "Củng cố ngữ pháp và từ vựng nền tảng",
+      "Phát triển 4 kỹ năng Listening - Reading - Writing - Speaking",
+      "Xây dựng tư duy sử dụng tiếng Anh",
+      "Chuẩn bị kiến thức cho lớp IELTS INTERMEDIATE (trung cấp)",
     ],
-    duration: "Lộ trình theo trình độ đầu vào",
-    audience: "Người mất gốc hoặc mới bắt đầu",
-    outcome: "Hướng tới nền tảng IELTS 4.0+",
+    duration: "Thời lượng: Bổ sung sau",
+    format: "Hình thức: 1-1 hoặc nhóm 4-6 học viên",
+    audience: "Đối tượng: Người mới bắt đầu học IELTS",
+    outcome: "Mục tiêu: IELTS Overall 4.5+",
     cta: "Tư vấn khóa IELTS",
     image: "/assets/dangcapnhan.png",
     href: "#tu-van",
@@ -32,17 +34,19 @@ const courses = [
   {
     number: "02",
     type: "IELTS",
-    title: "Pre - IELTS",
-    desc: "Phát triển toàn diện 4 kỹ năng Nghe – Nói – Đọc – Viết, từng bước làm quen với các dạng bài thi IELTS.",
+    title: "IELTS INTERMEDIATE (trung cấp)",
+    desc: "Tiếp nối chương trình nền tảng, tăng cường thực hành, rèn luyện và phát triển kỹ năng làm bài IELTS với mục tiêu 5.5+.",
     goals: [
-      "Phát triển đồng đều 4 kỹ năng",
-      "Mở rộng vốn từ vựng học thuật",
-      "Luyện Speaking theo chủ đề",
-      "Tiếp cận chiến thuật làm bài IELTS",
+      "Mở rộng từ vựng và ngữ pháp học thuật",
+      "Nâng cao năng lực Listening - Reading",
+      "Phát triển kỹ năng Writing - Speaking",
+      "Luyện tập các dạng bài IELTS phổ biến",
+      "Cải thiện khả năng vận dụng tiếng Anh",
     ],
-    duration: "Lộ trình theo năng lực học viên",
-    audience: "Học viên đã có kiến thức cơ bản",
-    outcome: "Hướng tới IELTS 4.5 – 5.5",
+    duration: "Thời lượng: Bổ sung sau",
+    format: "Hình thức: 1-1 hoặc nhóm 4-6 học viên",
+    audience: "Đối tượng: Học viên đã hoàn thành IELTS FOUNDATION (4.5+) hoặc kiểm tra năng lực đầu vào",
+    outcome: "Mục tiêu: IELTS Overall 5.5+",
     cta: "Tư vấn khóa IELTS",
     image: "/assets/dangcapnhan.png",
     href: "#tu-van",
@@ -67,22 +71,21 @@ const courses = [
   },
 
   // TOEIC
-  // TOEIC
   {
     number: "04",
     type: "TOEIC",
     title: "TOEIC Foundation",
-    desc: "Hệ thống toàn bộ kiến thức ngữ pháp, từ vựng và phát triển tư duy Listening – Reading, bám sát cấu trúc đề thi TOEIC mới nhất.",
+    desc: "Hệ thống toàn bộ kiến thức ngữ pháp, từ vựng và phát triển tư duy Listening - Reading, bám sát cấu trúc đề thi TOEIC mới nhất.",
     goals: [
       "Nắm vững cấu trúc đề thi TOEIC",
       "Củng cố nền tảng ngữ pháp và từ vựng",
-      "Làm quen các dạng bài Listening – Reading trong đề thi",
+      "Làm quen các dạng bài Listening - Reading trong đề thi",
       "Rèn luyện kỹ năng làm bài cơ bản",
       "Xây dựng nền tảng để học TOEIC hiệu quả",
     ],
     duration: "Thời lượng: Đang cập nhật",
     audience: "Đối tượng: Người mới bắt đầu học TOEIC",
-    outcome: "Hình thức: 1-1 hoặc nhóm 4–6 học viên",
+    outcome: "Hình thức: 1-1 hoặc nhóm 4-6 học viên",
     cta: "Tư vấn khóa TOEIC",
     image: "/assets/dangcapnhan.png",
     href: "#tu-van",
@@ -91,17 +94,17 @@ const courses = [
     number: "05",
     type: "TOEIC",
     title: "TOEIC Advanced",
-    desc: "Tập trung luyện đề Listening – Reading, nâng cao kỹ năng xử lý câu hỏi và tối ưu điểm số TOEIC 650+.",
+    desc: "Tập trung luyện đề Listening - Reading, nâng cao kỹ năng xử lý câu hỏi và tối ưu điểm số TOEIC 650+.",
     goals: [
       "Nắm vững chiến thuật làm bài TOEIC",
-      "Luyện tập và rèn luyện các dạng bài Listening – Reading",
+      "Luyện tập và rèn luyện các dạng bài Listening - Reading",
       "Nâng cao tốc độ và độ chính xác khi làm bài",
       "Phân tích lỗi sai và cải thiện điểm yếu",
       "Rèn luyện kỹ năng quản lý thời gian",
     ],
     duration: "Thời lượng: Đang cập nhật",
     audience: "Đối tượng: Học viên có nền tảng TOEIC 400+ và thực hiện bài kiểm tra đầu vào",
-    outcome: "Hình thức: 1-1 hoặc nhóm 4–6 học viên",
+    outcome: "Hình thức: 1-1 hoặc nhóm 4-6 học viên",
     cta: "Tư vấn khóa TOEIC",
     image: "/assets/dangcapnhan.png",
     href: "#tu-van",
@@ -117,10 +120,10 @@ const courses = [
       "Ôn tập, hệ thống các kiến thức ngữ pháp và từ vựng quan trọng",
       "Mở rộng vốn từ vựng thông dụng",
       "Thực hành giao tiếp trong các tình huống",
-      "Phát triển phản xạ nghe – nói tự nhiên",
+      "Phát triển phản xạ nghe - nói tự nhiên",
       "Duy trì và cải thiện sự tự tin khi giao tiếp bằng tiếng Anh",
     ],
-    duration: "Hình thức: 1-1 hoặc nhóm 4–6 học viên",
+    duration: "Hình thức: 1-1 hoặc nhóm 4-6 học viên",
     audience: "Đối tượng: Người muốn duy trì và phát triển tiếng Anh giao tiếp",
     outcome: "Đầu vào: Kiểm tra khả năng sử dụng ngoại ngữ",
     cta: "Tư vấn khóa giao tiếp",
@@ -139,7 +142,7 @@ const courses = [
       "Thực hành trình bày và trao đổi thông tin trong cuộc họp giả lập",
       "Rèn luyện kỹ năng quản lý thời gian",
     ],
-    duration: "Hình thức: 1-1 hoặc nhóm 4–6 học viên",
+    duration: "Hình thức: 1-1 hoặc nhóm 4-6 học viên",
     audience: "Đối tượng: Người đi làm có nền tảng tiếng Anh khá",
     outcome: "Đầu vào: Kiểm tra khả năng sử dụng ngoại ngữ",
     cta: "Tư vấn khóa giao tiếp",
@@ -268,9 +271,8 @@ export default function CoursesSection() {
         {/* TIÊU ĐỀ SECTION */}
         <SectionHeading
           eyebrow="CHƯƠNG TRÌNH ĐÀO TẠO ONLINE"
-          title="Các Khóa Học Online Tại"
+          title="Các Khóa Học Tại"
           highlight="Tân Sanh Ngữ"
-          desc="Hệ thống chương trình ngoại ngữ Online tương tác cao, bám sát nhu cầu học tập, xét tốt nghiệp và thăng tiến sự nghiệp."
           className="mb-4 text-center"
         />
 

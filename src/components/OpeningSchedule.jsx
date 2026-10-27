@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import SectionHeading from "./section-heading";
 
@@ -44,6 +43,21 @@ const scheduleData = [
     time: "20:00 - 21:30 (Online)",
   },
 ];
+
+const programConfig = {
+  IELTS: {
+    badge: "bg-red-50 text-red-700 border border-red-200",
+    modalIcon: "bg-red-50 text-red-600",
+  },
+  TOEIC: {
+    badge: "bg-blue-50 text-blue-700 border border-blue-200",
+    modalIcon: "bg-blue-50 text-blue-600",
+  },
+  "GIAO TIẾP": {
+    badge: "bg-emerald-50 text-emerald-700 border border-emerald-200",
+    modalIcon: "bg-emerald-50 text-emerald-600",
+  },
+};
 
 export default function ScheduleTable() {
   const [selectedCourse, setSelectedCourse] = useState(null);
@@ -93,9 +107,8 @@ export default function ScheduleTable() {
       <div className="mx-auto mb-10 max-w-7xl">
         <SectionHeading
           eyebrow="LỊCH KHAI GIẢNG CÁC LỚP ONLINE"
-          title="Lịch Khai Giảng Trực Tuyến Tại"
+          title="Lịch Khai Giảng Tại"
           highlight="Tân Sanh Ngữ"
-          desc="Cập nhật liên tục lịch khai giảng các lớp học Online mới nhất. Sĩ số tinh gọn để đảm bảo giảng viên theo sát và tương tác tối đa."
           className="text-center"
         />
       </div>
@@ -112,14 +125,7 @@ export default function ScheduleTable() {
               <th className="w-[20%] px-6 py-4">
                 <span className="flex items-center gap-2">
                   <HiOutlineAcademicCap className="h-4 w-4 shrink-0" />
-                  Lớp khai giảng
-                </span>
-              </th>
-
-              <th className="w-[16%] px-6 py-4 text-center">
-                <span className="flex items-center justify-center gap-2">
-                  <HiOutlineCheck className="h-4 w-4 shrink-0" />
-                  Tình trạng
+                  Ngày khai giảng
                 </span>
               </th>
 
@@ -127,6 +133,13 @@ export default function ScheduleTable() {
                 <span className="flex items-center gap-2">
                   <HiOutlineClock className="h-4 w-4 shrink-0" />
                   Lịch học
+                </span>
+              </th>
+
+              <th className="w-[16%] px-6 py-4 text-center">
+                <span className="flex items-center justify-center gap-2">
+                  <HiOutlineCheck className="h-4 w-4 shrink-0" />
+                  Tình trạng
                 </span>
               </th>
 
@@ -144,7 +157,11 @@ export default function ScheduleTable() {
               >
                 {/* TRÌNH ĐỘ */}
                 <td className="px-6 py-5 align-middle">
-                  <span className="mb-1.5 inline-block rounded bg-primary/10 px-2.5 py-0.5 text-[11px] font-bold text-primary">
+                  <span
+                    className={`mb-1.5 inline-block rounded px-2.5 py-0.5 text-[11px] font-bold ${programConfig[course.program]?.badge ||
+                      "bg-primary/10 text-primary border border-primary/20"
+                      }`}
+                  >
                     {course.program}
                   </span>
 
@@ -158,6 +175,17 @@ export default function ScheduleTable() {
                   {course.startDate}
                 </td>
 
+                {/* LỊCH HỌC */}
+                <td className="px-6 py-5 align-middle">
+                  <div className="text-sm font-bold text-gray-800">
+                    {course.days}
+                  </div>
+
+                  <div className="mt-0.5 text-xs text-gray-500">
+                    {course.time}
+                  </div>
+                </td>
+
                 {/* TÌNH TRẠNG */}
                 <td className="px-6 py-5 text-center align-middle">
                   <span
@@ -168,17 +196,6 @@ export default function ScheduleTable() {
                   >
                     {course.status}
                   </span>
-                </td>
-
-                {/* LỊCH HỌC */}
-                <td className="px-6 py-5 align-middle">
-                  <div className="text-sm font-bold text-gray-800">
-                    {course.days}
-                  </div>
-
-                  <div className="mt-0.5 text-xs text-gray-500">
-                    {course.time}
-                  </div>
                 </td>
 
                 {/* NÚT ĐĂNG KÝ */}
@@ -248,7 +265,11 @@ export default function ScheduleTable() {
               <div className="mb-6 space-y-4">
                 {/* CHƯƠNG TRÌNH ĐÀO TẠO */}
                 <div className="flex items-start gap-3">
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                  <span
+                    className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg ${programConfig[selectedCourse.program]?.modalIcon ||
+                      "bg-primary/10 text-primary"
+                      }`}
+                  >
                     <HiOutlineAcademicCap className="h-5 w-5" />
                   </span>
 

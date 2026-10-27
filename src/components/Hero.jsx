@@ -25,7 +25,7 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      <div className="container relative mx-auto flex min-h-inherit w-[calc(100%-3rem)] max-w-[1200px] items-center py-20 md:w-[calc(100%-5rem)] md:py-24">
+      <div className="container relative mx-auto flex min-h-inherit w-[calc(100%-3rem)] max-w-[1200px] items-center py-12 md:w-[calc(100%-5rem)] md:py-24">
 
         <div className="w-full max-w-[660px] animate-rise-in md:w-[63%]">
 
@@ -40,14 +40,14 @@ export default function Hero() {
             id="hero-title"
             className="mb-[22px] max-w-[720px] font-heading text-[36px] font-extrabold leading-[1.4] sm:text-[42px] md:text-[56px]"
           >
-            Kiến tạo nền tảng,{" "}
+            Kiến tạo nền tảng, <div className="hidden sm:block"></div>
             <span className="text-highlight">
               vươn tầm bản sắc.
             </span>
           </h1>
 
           {/* ZONE 3 */}
-          <p className="mb-8 max-w-[590px] text-[15px] leading-[1.8] text-surface/90 md:text-[17px]">
+          <p className="mb-8 max-w-[590px] text-[14px] leading-[1.8] text-surface/90 md:text-[17px]">
             Tại Tân Sanh Ngữ, Tiếng Anh là một trải nghiệm rèn luyện
             mang đậm dấu ấn cá nhân. Dựa trên bề dày truyền thống giáo
             dục và sự thấu hiểu phương pháp tân tiến, chúng tôi mang
@@ -57,36 +57,34 @@ export default function Hero() {
           </p>
 
           {/* CTA BUTTONS */}
-          <div className="flex max-w-[520px] flex-col gap-3 sm:flex-row">
+          <div className="flex sm:max-w-[800px] flex-col gap-3 sm:flex-row">
+            {/* Nút 1: Màu vàng thương hiệu (Accent/Gold) nổi bật nhất */}
             <a
-              className="inline-flex min-h-[52px] items-center justify-center gap-3 rounded bg-accent px-6 py-3.5 text-center text-sm font-extrabold text-primary transition hover:-translate-y-0.5 hover:bg-secondary-hover hover:shadow-lg"
+              className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded bg-accent px-5 py-3.5 text-center text-sm font-extrabold text-primary shadow-md transition hover:-translate-y-0.5 hover:bg-secondary-hover hover:shadow-lg"
               href="#tu-van"
             >
               Nhận tư vấn lộ trình Online
               <span aria-hidden="true">↗</span>
             </a>
 
+            {/* Nút 2: Nền trắng chữ Navy (Solid Surface) nổi bật cấp 2 */}
             <a
-              className="inline-flex min-h-[52px] items-center justify-center rounded border border-surface/65 bg-surface/10 px-6 py-3.5 text-center text-sm font-bold text-surface transition hover:bg-surface/20"
+              className="inline-flex min-h-[52px] items-center justify-center rounded bg-surface px-5 py-3.5 text-center text-sm font-bold text-primary shadow-sm transition hover:-translate-y-0.5 hover:bg-surface-muted hover:shadow-md"
+              href="#lich-khai-giang"
+            >
+              Lịch Khai Giảng
+            </a>
+
+            {/* Nút 3: Nền trong suốt viền trắng tinh tế (Outlined Glass) */}
+            <a
+              className="inline-flex min-h-[52px] items-center justify-center rounded border border-surface/70 bg-surface/10 px-5 py-3.5 text-center text-sm font-bold text-surface backdrop-blur-sm transition hover:border-surface hover:bg-surface/20"
               href="#courses"
             >
-              Khám phá các khóa học
+              Khám phá khóa học
             </a>
           </div>
 
-          {/* FEATURES */}
-          <div className="mt-8 flex items-center gap-2.5 text-xs text-surface/85">
-            <span
-              className="text-xl text-highlight"
-              aria-hidden="true"
-            >
-              ✦
-            </span>
-            <span>
-              Linh hoạt thời gian · Tương tác hai chiều cùng giảng viên
-              · Cam kết tiến bộ
-            </span>
-          </div>
+
         </div>
 
         {/* CIRCLE BADGE */}
