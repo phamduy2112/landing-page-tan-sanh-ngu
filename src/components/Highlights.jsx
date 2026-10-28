@@ -13,7 +13,7 @@ export default function Highlights() {
         {/* ZONE 5 - HÌNH ẢNH BÊN TRÁI */}
         <div className="relative order-2 overflow-hidden rounded-[24px] bg-primary md:order-1 w-[100%] h-[100%]">
           <img
-            src="/assets/Duy Profile0011.jpg"
+            src="/assets/dangcapnhan.png"
             alt="Hoạt động học ngoại ngữ tại Tân Sanh Ngữ"
             className="absolute inset-0 h-full w-full object-cover"
           />
