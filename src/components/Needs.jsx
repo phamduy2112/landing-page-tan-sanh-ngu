@@ -1,5 +1,4 @@
-
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SectionHeading from "./section-heading";
 import {
   MdCheck,
@@ -54,7 +53,7 @@ const courses = [
   {
     number: "03",
     type: "IELTS",
-    title: "IELTS Advanced",
+    title: "IELTS Advanced (Nâng Cao)",
     desc: "Luyện đề chuyên sâu, hoàn thiện chiến thuật làm bài và nâng cao toàn diện 4 kỹ năng, hướng đến mục tiêu IELTS 6.5+.",
     goals: [
       "Thành thạo các dạng bài IELTS",
@@ -152,7 +151,23 @@ const courses = [
   },
 ];
 
-function CourseCard({ item }) {
+function CourseCard({ item, onNavigateToSchedule }) {
+  const handleViewSchedule = () => {
+    if (onNavigateToSchedule) {
+      onNavigateToSchedule(item.type);
+    } else {
+      window.dispatchEvent(
+        new CustomEvent("tan-sanh-ngu:set-schedule-category", {
+          detail: item.type,
+        })
+      );
+      const section = document.getElementById("lich-hoc");
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  };
+
   return (
     <article className="group flex h-full flex-col overflow-hidden rounded-[24px] border border-primary/10 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-xl">
       {/* HÌNH ẢNH */}
@@ -239,14 +254,29 @@ function CourseCard({ item }) {
         </div>
 
         {/* CTA */}
-        <div className="mt-auto pt-5">
+        <div className="mt-auto flex items-stretch gap-2 pt-5">
+          <button
+            type="button"
+            onClick={handleViewSchedule}
+            className="group/btn flex min-h-[42px] flex-1 items-center justify-center gap-1.5 rounded-xl border border-primary/30 bg-primary/5 px-2 py-2 text-center text-[12px] font-bold text-primary transition-all duration-300 hover:border-primary hover:bg-primary hover:text-white sm:text-[13px]"
+          >
+            <MdCalendarMonth className="shrink-0 text-[16px] transition-transform duration-300 group-hover/btn:scale-110" />
+            <span className="whitespace-nowrap">Lịch khai giảng</span>
+          </button>
+
           <a
             href={item.href}
-            className="group/btn flex min-h-[44px] w-full items-center justify-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-center text-[14px] font-bold text-white shadow-sm transition-all duration-300 hover:brightness-110 hover:shadow-lg"
+            onClick={() => {
+              window.dispatchEvent(
+                new CustomEvent("tan-sanh-ngu:select-course", {
+                  detail: item.title,
+                })
+              );
+            }}
+            className="group/btn flex min-h-[42px] flex-1 items-center justify-center gap-1.5 rounded-xl bg-primary px-2 py-2 text-center text-[12px] font-bold text-white shadow-sm transition-all duration-300 hover:brightness-110 hover:shadow-lg sm:text-[13px]"
           >
-            {item.cta}
-
-            <MdArrowForward className="text-[19px] transition-transform duration-300 group-hover/btn:translate-x-1" />
+            <span className="whitespace-nowrap">Tư vấn ngay</span>
+            <MdArrowForward className="shrink-0 text-[16px] transition-transform duration-300 group-hover/btn:translate-x-1" />
           </a>
         </div>
       </div>
@@ -254,19 +284,47 @@ function CourseCard({ item }) {
   );
 }
 
-export default function CoursesSection() {
+export default function CoursesSection({
+  activeCategory: externalCategory,
+  onCategoryChange,
+  onNavigateToSchedule,
+}) {
   const categories = ["IELTS", "TOEIC", "GIAO TIẾP"];
 
-  const [activeCategory, setActiveCategory] = useState("IELTS");
+  const [internalCategory, setInternalCategory] = useState("IELTS");
+
+  const activeCategory =
+    externalCategory !== undefined ? externalCategory : internalCategory;
+  const setActiveCategory = onCategoryChange || setInternalCategory;
 
   const filteredCourses = courses.filter(
     (course) => course.type === activeCategory
   );
 
+  useEffect(() => {
+    const handleCategoryEvent = (event) => {
+      if (event.detail) {
+        setActiveCategory(event.detail);
+      }
+    };
+
+    window.addEventListener(
+      "tan-sanh-ngu:set-course-category",
+      handleCategoryEvent
+    );
+
+    return () => {
+      window.removeEventListener(
+        "tan-sanh-ngu:set-course-category",
+        handleCategoryEvent
+      );
+    };
+  }, [setActiveCategory]);
+
   return (
     <section
       id="courses"
-      className="overflow-hidden bg-surface-muted px-4 py-10 md:px-6 lg:py-14"
+      className="scroll-mt-20 overflow-hidden bg-surface-muted px-4 py-10 md:px-6 lg:py-14"
     >
       <div className="mx-auto max-w-[1200px]">
         {/* TIÊU ĐỀ SECTION */}
@@ -298,7 +356,11 @@ export default function CoursesSection() {
         {/* DANH SÁCH CARD */}
         <div className="grid grid-cols-1 items-stretch gap-4 md:gap-5 md:grid-cols-2 lg:grid-cols-3">
           {filteredCourses.map((item) => (
-            <CourseCard key={item.number} item={item} />
+            <CourseCard
+              key={item.number}
+              item={item}
+              onNavigateToSchedule={onNavigateToSchedule}
+            />
           ))}
         </div>
       </div>

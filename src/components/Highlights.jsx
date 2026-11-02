@@ -20,15 +20,7 @@ export default function Highlights() {
 
           <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/10 to-transparent" />
 
-          <div className="absolute bottom-7 left-7 right-7">
-            <span className="mb-3 inline-flex rounded-full bg-highlight px-3 py-2 text-xs font-bold tracking-[0.1em] text-primary">
-              TÂN SANH NGỮ
-            </span>
 
-            <h3 className="max-w-[390px] text-[25px] font-bold leading-[1.3] text-surface md:text-[30px]">
-              Học Online thực chiến, bứt phá mục tiêu.
-            </h3>
-          </div>
         </div>
 
         {/* NỘI DUNG BÊN PHẢI */}

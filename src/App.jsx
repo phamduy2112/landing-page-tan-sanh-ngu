@@ -1,31 +1,54 @@
+import { useState } from 'react'
 import Header from './components/Header.jsx'
 import Hero from './components/Hero.jsx'
-import LearningPaths from './components/LearningPaths.jsx'
-import Needs from './components/Needs.jsx'
 import Highlights from './components/Highlights.jsx'
-import Roadmap from './components/Roadmap.jsx'
+import CoursesSection from './components/Needs.jsx'
+import ScheduleTable from './components/OpeningSchedule.jsx'
 import TeacherSlider from './components/TeacherSlider.jsx'
-import VideoSection from './components/VideoSection.jsx'
-import FeedbackSlider from './components/FeedbackSlider.jsx'
+import FAQ from './components/Faq-section.jsx'
 import ConsultationForm from './components/ConsultationForm.jsx'
 import Footer from './components/Footer.jsx'
 import FloatingContact from './components/FloatingContact.jsx'
-import WhySection from './components/Why.jsx'
-import CoursesSection from './components/Needs.jsx'
-import FAQ from './components/Faq-section.jsx'
-import OpeningSchedule from './components/OpeningSchedule.jsx'
-import ScheduleTable from './components/OpeningSchedule.jsx'
 
 export default function App() {
+  const [courseCategory, setCourseCategory] = useState("IELTS");
+  const [scheduleCategory, setScheduleCategory] = useState("ALL");
+
+  const handleNavigateToSchedule = (category = "IELTS") => {
+    setScheduleCategory(category);
+    const element = document.getElementById("lich-hoc");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
+  const handleNavigateToCourses = (category = "IELTS") => {
+    setCourseCategory(category);
+    const element = document.getElementById("courses");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <>
       <Header />
 
       <main id="main-content">
-        <Hero />
+        <Hero
+          onExploreCourses={handleNavigateToCourses}
+          onOpenSchedule={handleNavigateToSchedule}
+        />
         <Highlights />
-        <CoursesSection />
-        <ScheduleTable />
+        <CoursesSection
+          activeCategory={courseCategory}
+          onCategoryChange={setCourseCategory}
+          onNavigateToSchedule={handleNavigateToSchedule}
+        />
+        <ScheduleTable
+          activeCategory={scheduleCategory}
+          onCategoryChange={setScheduleCategory}
+        />
 
         <TeacherSlider />
         <FAQ />
@@ -35,5 +58,5 @@ export default function App() {
       <Footer />
       <FloatingContact />
     </>
-  )
+  );
 }

@@ -59,9 +59,16 @@ const programConfig = {
   },
 };
 
-export default function ScheduleTable() {
+export default function ScheduleTable({
+  activeCategory: externalCategory,
+  onCategoryChange,
+}) {
   const [selectedCourse, setSelectedCourse] = useState(null);
-  const [activeCategory, setActiveCategory] = useState("ALL");
+  const [internalCategory, setInternalCategory] = useState("ALL");
+
+  const activeCategory =
+    externalCategory !== undefined ? externalCategory : internalCategory;
+  const setActiveCategory = onCategoryChange || setInternalCategory;
 
   const categories = [
     { id: "ALL", label: "Tất cả" },
@@ -69,6 +76,27 @@ export default function ScheduleTable() {
     { id: "TOEIC", label: "TOEIC" },
     { id: "GIAO TIẾP", label: "Giao Tiếp" },
   ];
+
+  // Lắng nghe sự kiện chuyển tab từ các component khác
+  useEffect(() => {
+    const handleCategoryEvent = (event) => {
+      if (event.detail) {
+        setActiveCategory(event.detail);
+      }
+    };
+
+    window.addEventListener(
+      "tan-sanh-ngu:set-schedule-category",
+      handleCategoryEvent
+    );
+
+    return () => {
+      window.removeEventListener(
+        "tan-sanh-ngu:set-schedule-category",
+        handleCategoryEvent
+      );
+    };
+  }, [setActiveCategory]);
 
   const filteredSchedule = activeCategory === "ALL"
     ? scheduleData
@@ -97,6 +125,13 @@ export default function ScheduleTable() {
 
   // Đóng modal và cuộn đến form tư vấn
   const handleRegister = () => {
+    if (selectedCourse) {
+      window.dispatchEvent(
+        new CustomEvent("tan-sanh-ngu:select-course", {
+          detail: selectedCourse.level,
+        })
+      );
+    }
     setSelectedCourse(null);
 
     requestAnimationFrame(() => {
@@ -114,7 +149,7 @@ export default function ScheduleTable() {
   return (
     <section
       id="lich-hoc"
-      className="bg-gray-50 px-4 py-10 font-sans lg:py-16"
+      className="scroll-mt-20 bg-gray-50 px-4 py-10 font-sans lg:py-16"
     >
       <div className="mx-auto mb-6 max-w-7xl">
         <SectionHeading

@@ -1,5 +1,35 @@
+export default function Hero({ onExploreCourses, onOpenSchedule }) {
+  const handleCoursesClick = (e) => {
+    if (onExploreCourses) {
+      e.preventDefault();
+      onExploreCourses("IELTS");
+    } else {
+      const section = document.getElementById("courses");
+      if (section) {
+        e.preventDefault();
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  };
 
-export default function Hero() {
+  const handleScheduleClick = (e) => {
+    if (onOpenSchedule) {
+      e.preventDefault();
+      onOpenSchedule("ALL");
+    } else {
+      window.dispatchEvent(
+        new CustomEvent("tan-sanh-ngu:set-schedule-category", {
+          detail: "ALL",
+        })
+      );
+      const section = document.getElementById("lich-hoc");
+      if (section) {
+        e.preventDefault();
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  };
+
   return (
     <section
       className="relative isolate flex min-h-[660px] items-center overflow-hidden bg-primary text-surface md:min-h-[min(800px,41.67vw)]"
@@ -26,9 +56,7 @@ export default function Hero() {
       />
 
       <div className="container relative mx-auto flex min-h-inherit w-[calc(100%-3rem)] max-w-[1200px] items-center py-12 md:w-[calc(100%-5rem)] md:py-24">
-
         <div className="w-full max-w-[660px] animate-rise-in md:w-[63%]">
-
           {/* ZONE 1 */}
           <p className="mb-[17px] text-[11px] font-extrabold uppercase tracking-[.11em] text-highlight sm:text-[12px]">
             <span className="mr-2 inline-block h-0.5 w-6 bg-current align-middle" />
@@ -71,6 +99,7 @@ export default function Hero() {
             <a
               className="inline-flex min-h-[52px] items-center justify-center rounded bg-surface px-5 py-3.5 text-center text-sm font-bold text-primary shadow-sm transition hover:-translate-y-0.5 hover:bg-surface-muted hover:shadow-md"
               href="#lich-hoc"
+              onClick={handleScheduleClick}
             >
               Lịch Khai Giảng
             </a>
@@ -79,12 +108,11 @@ export default function Hero() {
             <a
               className="inline-flex min-h-[52px] items-center justify-center rounded border border-surface/70 bg-surface/10 px-5 py-3.5 text-center text-sm font-bold text-surface backdrop-blur-sm transition hover:border-surface hover:bg-surface/20"
               href="#courses"
+              onClick={handleCoursesClick}
             >
               Khám phá khóa học
             </a>
           </div>
-
-
         </div>
 
         {/* CIRCLE BADGE */}
