@@ -88,7 +88,7 @@ export default function Hero({ onExploreCourses, onOpenSchedule }) {
           <div className="flex sm:max-w-[800px] flex-col gap-3 sm:flex-row">
             {/* Nút 1: Màu vàng thương hiệu (Accent/Gold) nổi bật nhất */}
             <a
-              className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded bg-accent px-5 py-3.5 text-center text-sm font-extrabold text-primary shadow-md transition hover:-translate-y-0.5 hover:bg-secondary-hover hover:shadow-lg"
+              className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded bg-accent px-5 py-3.5 text-center text-sm font-bold text-primary shadow-md transition hover:-translate-y-0.5 hover:bg-secondary-hover hover:shadow-lg"
               href="#tu-van"
             >
               Nhận tư vấn lộ trình Online
