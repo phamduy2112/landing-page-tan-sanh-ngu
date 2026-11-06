@@ -13,7 +13,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-primary/10 bg-surface/95 backdrop-blur">
       <div className="container mx-auto flex min-h-[82px] w-[calc(100%-3rem)] max-w-[1200px] items-center justify-between gap-7 md:w-[calc(100%-5rem)]">
         <a className="flex shrink-0 items-center gap-2.5" href="#top" aria-label="Tân Sanh Ngữ - về đầu trang">
-          <img src="/assets/LOGO2.png" className="w-[150px] h-auto" alt="Logo Tân Sanh Ngữ" />
+          <img src="/assets/LOGO-05.png" className="w-[200px] h-auto" alt="Logo Tân Sanh Ngữ" />
         </a>
         <button
           className="grid h-11 w-11 place-content-center gap-1 rounded border border-primary/10 bg-surface md:hidden"

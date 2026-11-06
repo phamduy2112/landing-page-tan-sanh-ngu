@@ -22,8 +22,8 @@ export default function Footer() {
             aria-label="Tân Sanh Ngữ - Về đầu trang"
           >
             <img
-              src="/assets/LOGO3.png"
-              className="h-auto w-[150px]"
+              src="/assets/LOGO-08.png"
+              className="h-auto w-[250px]"
               alt="Tân Sanh Ngữ Logo"
             />
           </a>
