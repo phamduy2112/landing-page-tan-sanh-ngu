@@ -47,6 +47,7 @@ export default function ConsultationForm() {
   const [errors, setErrors] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   // Lắng nghe sự kiện chọn khóa học từ các section khác
   useEffect(() => {
@@ -124,13 +125,56 @@ export default function ConsultationForm() {
     }
 
     setIsSubmitting(true);
+    setSubmitError('');
 
-    // Mô phỏng gửi dữ liệu
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-      setValues(initialValues);
-    }, 400);
+    const audienceLabel =
+      audienceOptions.find((a) => a.value === values.audience)?.label ||
+      values.audience;
+
+    const payload = {
+      timestamp: new Date().toLocaleString('vi-VN', {
+        timeZone: 'Asia/Ho_Chi_Minh',
+      }),
+      name: values.name.trim(),
+      phone: values.phone.trim(),
+      audience: audienceLabel,
+      course: values.course,
+      message: values.message.trim(),
+      source: 'Landing Page Tân Sanh Ngữ',
+    };
+
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz5QgDSqxNsO2jXjjWwnQh3_wrg7dhxe_p2JIJAjCN5GoYt3pmnoOdmHoD9DXJ0xNIIQg/exec';
+
+    async function sendData() {
+      try {
+        if (SCRIPT_URL && SCRIPT_URL.trim() !== '') {
+          // Gửi dữ liệu tới Google Apps Script Web App
+          // Dùng 'text/plain;charset=utf-8' và mode: 'no-cors' để tránh lỗi CORS preflight OPTIONS
+          await fetch(SCRIPT_URL.trim(), {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'text/plain;charset=utf-8',
+            },
+            body: JSON.stringify(payload),
+          });
+        } else {
+          // Giả lập khi chưa cấu hình VITE_GOOGLE_SHEET_URL
+          await new Promise((resolve) => setTimeout(resolve, 600));
+        }
+
+        setIsSubmitted(true);
+        setValues(initialValues);
+      } catch (err) {
+        console.error('Lỗi khi gửi form tới Google Sheets:', err);
+        setSubmitError(
+          'Có lỗi xảy ra trong quá trình gửi. Vui lòng thử lại hoặc liên hệ hotline để được hỗ trợ nhanh nhất.'
+        );
+      } finally {
+        setIsSubmitting(false);
+      }
+    }
+
+    sendData();
   }
 
   const fieldClass =
@@ -381,14 +425,33 @@ export default function ConsultationForm() {
                   )}
                 </div>
 
+                {/* HIỂN THỊ LỖI KẾT NỐI NẾU CÓ */}
+                {submitError && (
+                  <div className="rounded-xl border border-red-200 bg-red-50 p-3 text-xs text-red-600 md:col-span-2">
+                    {submitError}
+                  </div>
+                )}
+
                 {/* NÚT SUBMIT */}
                 <button
                   className="inline-flex min-h-[50px] items-center justify-center gap-2.5 rounded-xl bg-accent px-6 py-3.5 text-sm font-bold text-primary shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg hover:bg-secondary-hover disabled:cursor-not-allowed disabled:opacity-60 md:col-span-2"
                   type="submit"
                   disabled={isSubmitting}
                 >
-                  <HiOutlinePaperAirplane className="h-4 w-4 rotate-45" />
-                  {isSubmitting ? 'Đang gửi...' : 'Gửi yêu cầu tư vấn'}
+                  {isSubmitting ? (
+                    <>
+                      <svg className="h-4 w-4 animate-spin text-primary" viewBox="0 0 24 24" fill="none">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+                      </svg>
+                      <span>Đang gửi thông tin...</span>
+                    </>
+                  ) : (
+                    <>
+                      <HiOutlinePaperAirplane className="h-4 w-4 rotate-45" />
+                      <span>Gửi yêu cầu tư vấn</span>
+                    </>
+                  )}
                 </button>
               </form>
             </>

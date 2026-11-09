@@ -115,23 +115,6 @@ export default function Hero({ onExploreCourses, onOpenSchedule }) {
           </div>
         </div>
 
-        {/* CIRCLE BADGE */}
-        <div
-          className="absolute bottom-[16%] right-[4%] hidden aspect-square w-[142px] rotate-[9deg] flex-col items-center justify-center rounded-full border border-surface/65 text-center before:absolute before:inset-[7px] before:rounded-full before:border before:border-dashed before:border-surface/55 lg:flex"
-          aria-hidden="true"
-        >
-          <span className="text-[8px] font-bold tracking-[.1em]">
-            HỌC ONLINE
-          </span>
-          <b className="my-1 text-[22px] leading-none text-highlight">
-            thực
-            <br />
-            chiến
-          </b>
-          <span className="text-[8px] font-bold tracking-[.1em]">
-            THEO MỤC TIÊU
-          </span>
-        </div>
 
         {/* SCROLL INDICATOR */}
         <a

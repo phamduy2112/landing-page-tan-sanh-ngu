@@ -29,8 +29,8 @@ export default function Footer() {
           </a>
 
           <p className="mt-[18px] max-w-[310px] text-[12px] leading-relaxed text-surface/75">
-            Trung tâm đào tạo ngoại ngữ Online: IELTS, TOEIC
-            và Tiếng Anh Giao tiếp thực chiến.
+            Trung tâm đào tạo ngoại ngữ: IELTS, TOEIC
+            và Tiếng Anh Giao tiếp.
           </p>
         </div>
 
@@ -119,7 +119,7 @@ export default function Footer() {
       {/* COPYRIGHT */}
       <div className="container mx-auto flex min-h-[55px] w-[calc(100%-3rem)] max-w-[1200px] flex-col justify-center gap-2 border-t border-surface/20 py-4 text-[11px] text-surface/65 md:w-[calc(100%-5rem)] md:flex-row md:items-center md:justify-between md:py-0">
         <span>
-          © {new Date().getFullYear()} Tân Sanh Ngữ · Ngoại ngữ Online thực chiến
+          © {new Date().getFullYear()} Tân Sanh Ngữ
         </span>
 
         <span>
