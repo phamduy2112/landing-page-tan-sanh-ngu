@@ -198,12 +198,12 @@ export default function ConsultationForm() {
             className="relative mb-4 max-w-[450px] font-heading text-[30px] font-bold leading-tight text-surface md:text-[38px]"
             id="contact-title"
           >
-            Cùng tìm khóa học Online phù hợp.
+            Khám phá khóa học phù hợp tại TSN.
           </h2>
 
           <p className="relative mb-7 max-w-[440px] text-[14px] leading-relaxed text-surface/85">
             Để lại thông tin và mục tiêu ngoại ngữ của bạn. Đội ngũ Tân Sanh Ngữ
-            sẽ liên hệ đánh giá trình độ và tư vấn lộ trình Online hiệu quả nhất.
+            sẽ liên hệ đánh giá trình độ và tư vấn lộ trình hiệu quả nhất.
           </p>
 
           <div className="relative grid gap-3.5 text-[13px]">
@@ -218,7 +218,7 @@ export default function ConsultationForm() {
               <b className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-highlight text-primary text-[11px] font-extrabold">
                 ✓
               </b>
-              Lộ trình cá nhân hóa theo mục tiêu
+              Lộ trình chuẩn TSN theo mục tiêu
             </span>
 
             <span className="flex items-center gap-3">
