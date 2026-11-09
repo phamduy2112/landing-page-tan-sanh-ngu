@@ -117,14 +117,7 @@ export default function Hero({ onExploreCourses, onOpenSchedule }) {
 
 
         {/* SCROLL INDICATOR */}
-        <a
-          className="absolute bottom-7 right-8 hidden items-center gap-2 text-[10px] text-surface/75 md:flex"
-          href="#kho-khan"
-          aria-label="Cuộn để khám phá"
-        >
-          <span className="h-[30px] w-[21px] rounded-full border border-current" />
-          Cuộn để khám phá
-        </a>
+
       </div>
     </section>
   );
