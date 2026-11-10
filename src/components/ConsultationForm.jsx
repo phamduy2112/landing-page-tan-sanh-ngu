@@ -143,7 +143,7 @@ export default function ConsultationForm() {
       source: 'Landing Page Tân Sanh Ngữ',
     };
 
-    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz5QgDSqxNsO2jXjjWwnQh3_wrg7dhxe_p2JIJAjCN5GoYt3pmnoOdmHoD9DXJ0xNIIQg/exec';
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxkkDcIJEHbFNI0V_aIlbK4VubD7BiFhIa3WRBBeVlwOg8i4S1eIfyzGU0Dgo6lMDrC/exec';
 
     async function sendData() {
       try {
