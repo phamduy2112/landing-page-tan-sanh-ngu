@@ -143,6 +143,10 @@ export default function ConsultationForm() {
       source: 'Landing Page Tân Sanh Ngữ',
     };
 
+    // WARNING / NOTE (Staging): URL Google Apps Script đang gắn cứng để deploy nhanh.
+    // Mọi lượt test gửi form trên Staging cũng sẽ ghi vào Google Sheet này.
+    // TODO: Khi tách dữ liệu Staging/Production, đổi sang `import.meta.env.VITE_GOOGLE_SHEET_URL`
+    // và cấu hình biến môi trường tương ứng trên Vercel.
     const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxkkDcIJEHbFNI0V_aIlbK4VubD7BiFhIa3WRBBeVlwOg8i4S1eIfyzGU0Dgo6lMDrC/exec';
 
     async function sendData() {
