@@ -143,22 +143,23 @@ export default function ConsultationForm() {
       source: 'Landing Page Tân Sanh Ngữ',
     };
 
-    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxkkDcIJEHbFNI0V_aIlbK4VubD7BiFhIa3WRBBeVlwOg8i4S1eIfyzGU0Dgo6lMDrC/exec';
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyU-Td2GSrE7vwIXdj6BOiJVW2UUphZHDjq3mgCkt-sR0CsnzhboCMUsXPzH0-Nt5vj/exec';
 
     async function sendData() {
       try {
         if (SCRIPT_URL && SCRIPT_URL.trim() !== '') {
-          // Gửi dữ liệu tới Google Apps Script Web App
-          // Dùng 'text/plain;charset=utf-8' và mode: 'no-cors' để tránh lỗi CORS preflight OPTIONS
+          // Google Apps Script Web App yêu cầu mode: 'no-cors' khi gọi trực tiếp từ trình duyệt
+          // để tránh bị chặn bởi chính sách CORS của Google
           await fetch(SCRIPT_URL.trim(), {
             method: 'POST',
+            mode: 'no-cors',
             headers: {
               'Content-Type': 'text/plain;charset=utf-8',
             },
             body: JSON.stringify(payload),
           });
         } else {
-          // Giả lập khi chưa cấu hình VITE_GOOGLE_SHEET_URL
+          // Giả lập khi chưa cấu hình SCRIPT_URL
           await new Promise((resolve) => setTimeout(resolve, 600));
         }
 
